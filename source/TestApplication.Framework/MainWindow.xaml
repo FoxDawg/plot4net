@@ -1,0 +1,38 @@
+﻿<Window
+    x:Class="TestApplication.Framework.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:framework1="clr-namespace:PlottingControls.Framework;assembly=PlottingControls.Framework"
+    xmlns:framework2="clr-namespace:TestApplication.Framework"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="500"
+    Height="500"
+    d:DataContext="{d:DesignInstance framework2:MainWindowViewModel}"
+    mc:Ignorable="d">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button
+                Width="100"
+                Height="50"
+                Margin="2"
+                Command="{Binding PlotCommand}">
+                Draw
+            </Button>
+            <Button
+                Width="100"
+                Height="50"
+                Margin="2"
+                Command="{Binding ExportCommand}">
+                Export
+            </Button>
+        </StackPanel>
+
+
+        <framework1:FigureControl
+            Width="400"
+            Height="400"
+            Figure="{Binding Figure}" />
+    </StackPanel>
+</Window>

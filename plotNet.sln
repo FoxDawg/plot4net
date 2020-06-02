@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.128
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Framework", "source\TestApplication.Framework\TestApplication.Framework.csproj", "{762213B4-2214-43A9-BC72-F298E8F6B232}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlottingLib", "source\PlottingLib\PlottingLib.csproj", "{01661B5A-4854-4547-9796-C344F364A902}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlottingLib.UnitTests", "source\PlottingLib.UnitTests\PlottingLib.UnitTests.csproj", "{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplication.Core", "source\TestApplication.Core\TestApplication.Core.csproj", "{766DA949-8239-4501-B576-E3664C18BB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "source\Common\Common.csproj", "{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlottingControls.Framework", "PlottingControls.Framework\PlottingControls.Framework.csproj", "{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{762213B4-2214-43A9-BC72-F298E8F6B232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762213B4-2214-43A9-BC72-F298E8F6B232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762213B4-2214-43A9-BC72-F298E8F6B232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762213B4-2214-43A9-BC72-F298E8F6B232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01661B5A-4854-4547-9796-C344F364A902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01661B5A-4854-4547-9796-C344F364A902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01661B5A-4854-4547-9796-C344F364A902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01661B5A-4854-4547-9796-C344F364A902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766DA949-8239-4501-B576-E3664C18BB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766DA949-8239-4501-B576-E3664C18BB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766DA949-8239-4501-B576-E3664C18BB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766DA949-8239-4501-B576-E3664C18BB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8397A033-75F2-4B91-A6A9-C9C6D48DF6F4}
+	EndGlobalSection
+EndGlobal
