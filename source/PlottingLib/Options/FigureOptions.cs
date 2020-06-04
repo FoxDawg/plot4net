@@ -9,9 +9,9 @@ namespace PlottingLib.Options
     public class FigureOptions
     {
         /// <summary>
-        ///     The relative margin of the plot to the border on both sides.
+        ///     Options for the figure axes.
         /// </summary>
-        public double RelativeAxisMarginToBorder { get; set; } = 0.1;
+        public AxisOptions AxisOptions { get; set; } = new AxisOptions();
 
         /// <summary>
         ///     The renderer type used for image export.
@@ -21,16 +21,21 @@ namespace PlottingLib.Options
         /// <summary>
         ///     The renderer resolution used for image export.
         /// </summary>
-        public double RendererResolution { get; set; } = 150;
+        public double RendererResolution { get; set; } = 300;
 
         /// <summary>
         ///     The figure background color.
         /// </summary>
-        public Color Background { get; set; } = Color.AntiqueWhite;
+        public Color Background { get; set; } = Color.Gainsboro;
 
         /// <summary>
         ///     The figure title.
         /// </summary>
         public string Title { get; set; } = "MyFigure";
+
+        /// <summary>
+        /// Font size for the title.
+        /// </summary>
+        public int TitleFontSize { get; set; } = 14;
     }
 }

@@ -16,6 +16,15 @@ namespace PlottingLib
         public Func<string, Task> ExportAction { get; set; }
 
         /// <summary>
+        /// Exports the image to the specified file.
+        /// </summary>
+        /// <param name="fullPath">Full path to the file.</param>
+        public Task ExportAsync(string fullPath)
+        {
+            return this.ExportAction?.Invoke(fullPath);
+        }
+
+        /// <summary>
         ///     Options for a single plot.
         /// </summary>
         public PlotOptions PlotOptions { get; } = new PlotOptions();

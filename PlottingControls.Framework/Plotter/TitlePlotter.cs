@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using PlottingLib.Contract;
 using PlottingLib.Options;
@@ -8,40 +9,47 @@ namespace PlottingControls.Framework.Plotter
     /// <summary>
     ///     Specific plotter for the title bar.
     /// </summary>
-    public class TitlePlotter : ISimplePlot
+    internal class TitlePlotter : ISimplePlot
     {
-        private readonly Canvas canvas;
         private readonly FigureOptions options;
 
         /// <summary>
         ///     Creates a new instance of the <see cref="TitlePlotter" />
         /// </summary>
-        /// <param name="canvas">The canvas to draw upon.</param>
         /// <param name="options">The figure options to use.</param>
-        public TitlePlotter(Canvas canvas, FigureOptions options)
+        public TitlePlotter(FigureOptions options)
         {
-            this.canvas = canvas;
             this.options = options;
         }
+
 
         /// <summary>
         ///     Performs a simple plotting operation without any additional data.
         /// </summary>
-        public void Plot()
+        /// <param name="uiParent">The ui parent to plot upon.</param>
+        public void Plot(object uiParent)
         {
-            var text = new Label
+            if (uiParent is Canvas canvas)
             {
-                Content = this.options.Title,
-                Margin = new Thickness(0),
-                Width = this.canvas.ActualWidth,
-                HorizontalContentAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Top
-            };
+                var text = new Label
+                {
+                    Content = this.options.Title,
+                    Margin = new Thickness(0),
+                    Width = canvas.ActualWidth,
+                    HorizontalContentAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    FontSize = this.options.TitleFontSize
+                };
 
-            Canvas.SetTop(text, 0.25 * this.options.RelativeAxisMarginToBorder * this.canvas.ActualHeight);
-            Canvas.SetLeft(text, 0);
+                Canvas.SetTop(text, 0.25 * this.options.AxisOptions.RelativeAxisMarginToBorder * canvas.ActualHeight);
+                Canvas.SetLeft(text, 0);
 
-            this.canvas.Children.Add(text);
+                canvas.Children.Add(text);
+            }
+            else
+            {
+                throw new ArgumentException($"UiParent must be of type {typeof(Canvas)}.");
+            }
         }
     }
 }

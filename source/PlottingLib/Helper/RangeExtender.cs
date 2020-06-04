@@ -3,7 +3,7 @@ using System.Linq;
 using PlottingLib.Enum;
 using PlottingLib.Options;
 
-namespace PlottingControls.Framework
+namespace PlottingLib.Helper
 {
     /// <summary>
     ///     Performs operations to calculate axis ranges.
@@ -24,7 +24,7 @@ namespace PlottingControls.Framework
                 var range1 = data.Min() - 0.1 * dataRange;
                 var range2 = data.Max() + 0.1 * dataRange;
 
-                axisOptions.XRange = new[] {Math.Min(range1, range2), Math.Max(range1, range2)};
+                axisOptions.XRange = new[] { Math.Min(range1, range2), Math.Max(range1, range2) };
             }
         }
 
@@ -42,7 +42,7 @@ namespace PlottingControls.Framework
                 var range1 = data.Min() - 0.1 * dataRange;
                 var range2 = data.Max() + 0.1 * dataRange;
 
-                axisOptions.YRange = new[] {Math.Min(range1, range2), Math.Max(range1, range2)};
+                axisOptions.YRange = new[] { Math.Min(range1, range2), Math.Max(range1, range2) };
             }
         }
     }

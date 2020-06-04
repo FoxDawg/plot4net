@@ -11,4 +11,8 @@
 		<ProjectReference Include="..\PlottingLib\PlottingLib.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Plotter\" />
+	</ItemGroup>
+
 </Project>

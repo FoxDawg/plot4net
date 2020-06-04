@@ -1,10 +1,11 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using PlottingControls.Framework.Plotter;
 using PlottingLib;
 using PlottingLib.Contract;
-using PlottingLib.Enum;
+using PlottingLib.Helper;
 
 namespace PlottingControls.Framework
 {
@@ -13,10 +14,10 @@ namespace PlottingControls.Framework
     /// </summary>
     public partial class FigureControl : UserControl
     {
-        private ISimplePlot axisPlotter;
+        private IEnumerable<IDataPlot> dataPlotter;
         private FigureExporter figureExporter;
-        private IDataPlot scatterPlotter;
-        private ISimplePlot titlePlotter;
+
+        private IEnumerable<ISimplePlot> simplePlotter;
 
         /// <summary>
         ///     The figure of the control.
@@ -57,28 +58,32 @@ namespace PlottingControls.Framework
             this.figureExporter = new FigureExporter(this.BaseCanvas, this.Figure.FigureOptions.RendererType, this.Figure.FigureOptions.RendererResolution);
             this.Figure.ExportAction = s => this.figureExporter.ExportToFileAsync(s);
 
-            this.titlePlotter = new TitlePlotter(this.BaseCanvas, this.Figure.FigureOptions);
-            this.titlePlotter.Plot();
+            RangeExtender.ExtendHorizontalRange(this.Figure.XData, this.Figure.FigureOptions.AxisOptions);
+            RangeExtender.ExtendVerticalRange(this.Figure.YData, this.Figure.FigureOptions.AxisOptions);
 
-            this.axisPlotter = new AxisPlotter(this.BaseCanvas, this.Figure.FigureOptions);
-            this.axisPlotter.Plot();
+            var factory = new PlotterFactory(this.Figure.FigureOptions);
 
+            this.dataPlotter = factory.Create(this.Figure.PlotOptions);
+            this.PerformSimplePlots(factory);
+            this.PerformDataPlots(factory);
+        }
 
-            switch (this.Figure.PlotOptions.LineType)
+        private void PerformSimplePlots(PlotterFactory factory)
+        {
+            this.simplePlotter = factory.Create();
+            foreach (var simplePlot in this.simplePlotter)
             {
-                case LineType.Scatter:
-                    this.PerformScatterPlot();
-                    break;
-                case LineType.ScatterAndLine:
-                    this.PerformScatterPlot();
-                    break;
+                simplePlot.Plot(this.BaseCanvas);
             }
         }
 
-        private void PerformScatterPlot()
+        private void PerformDataPlots(PlotterFactory factory)
         {
-            this.scatterPlotter = new ScatterPlotter(this.BaseCanvas, this.Figure.FigureOptions, this.Figure.PlotOptions);
-            this.scatterPlotter.Plot(this.Figure.XData, this.Figure.YData);
+            this.dataPlotter = factory.Create(this.Figure.PlotOptions);
+            foreach (var dataPlot in this.dataPlotter)
+            {
+                dataPlot.Plot(this.BaseCanvas, this.Figure.XData, this.Figure.YData);
+            }
         }
     }
 }

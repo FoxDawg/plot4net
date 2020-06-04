@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlottingLib", "source\Plott
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlottingLib.UnitTests", "source\PlottingLib.UnitTests\PlottingLib.UnitTests.csproj", "{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplication.Core", "source\TestApplication.Core\TestApplication.Core.csproj", "{766DA949-8239-4501-B576-E3664C18BB08}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "source\Common\Common.csproj", "{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "source\Common\Common.csproj", "{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlottingControls.Framework", "PlottingControls.Framework\PlottingControls.Framework.csproj", "{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}"
 EndProject
@@ -33,10 +31,6 @@ Global
 		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{766DA949-8239-4501-B576-E3664C18BB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{766DA949-8239-4501-B576-E3664C18BB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{766DA949-8239-4501-B576-E3664C18BB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{766DA949-8239-4501-B576-E3664C18BB08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}.Release|Any CPU.ActiveCfg = Release|Any CPU

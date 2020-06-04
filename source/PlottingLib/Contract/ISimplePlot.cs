@@ -8,6 +8,7 @@
         /// <summary>
         ///     Performs a simple plotting operation without any additional data.
         /// </summary>
-        void Plot();
+        /// <param name="uiParent">The ui parent to plot upon.</param>
+        void Plot(object uiParent);
     }
 }

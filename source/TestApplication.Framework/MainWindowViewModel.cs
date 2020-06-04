@@ -29,9 +29,12 @@ namespace TestApplication.Framework
 
         private Task PlotAsync()
         {
-            var xData = Enumerable.Range(0, 100).Select(o => (double) o).ToArray();
+            var xData = Enumerable.Range(0, 10).Select(o => (double) o).ToArray();
             var random = new Random();
             var yData = xData.Select(o => o + random.Next(-50, 50)).Select(o => o).ToArray();
+
+            xData = new double[] { -1, 1, 2, 3, 4, 5, 6 };
+            yData = new double[] { -1, 10, 20, 10, -100, 10, -20 };
             this.Figure = new Figure(xData, yData);
             return Task.CompletedTask;
         }
@@ -39,7 +42,7 @@ namespace TestApplication.Framework
         private Task ExportAsync()
         {
             var fullPath = Path.GetFullPath(@"C:/temp/myImage.png");
-            return this.Figure.ExportAction.Invoke(fullPath);
+            return this.Figure.ExportAsync(fullPath);
         }
     }
 }

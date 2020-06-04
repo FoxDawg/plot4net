@@ -58,8 +58,12 @@
       <DependentUpon>FigureControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="FigureExporter.cs" />
+    <Compile Include="Plotter\AxisTickPlotter.cs" />
     <Compile Include="Plotter\AxisPlotter.cs" />
+    <Compile Include="Plotter\LinePlotter.cs" />
+    <Compile Include="Plotter\PlotterFactory.cs" />
     <Compile Include="Plotter\ScatterPlotter.cs" />
+    <Compile Include="Plotter\AxisLabelPlotter.cs" />
     <Compile Include="Plotter\TitlePlotter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -74,7 +78,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RangeExtender.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
