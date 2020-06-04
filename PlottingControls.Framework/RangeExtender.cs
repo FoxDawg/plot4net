@@ -1,27 +1,49 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using PlottingLib.Enum;
+using PlottingLib.Options;
 
 namespace PlottingControls.Framework
 {
     /// <summary>
     ///     Performs operations to calculate axis ranges.
     /// </summary>
-    public class RangeExtender
+    public static class RangeExtender
     {
         /// <summary>
         ///     Performs automatic range extension for the given data.
         /// </summary>
         /// <param name="data">The data to perform calculations on.</param>
+        /// <param name="axisOptions">The axis options to use.</param>
         /// <returns>The extended range data.</returns>
-        public double[] ExtendRange(double[] data)
+        public static void ExtendHorizontalRange(double[] data, AxisOptions axisOptions)
         {
-            var dataRange = data.Max() - data.Min();
-            var extendedData = new List<double>();
-            extendedData.Add(data.Min() - 0.1 * dataRange);
-            extendedData.AddRange(data);
-            extendedData.Add(data.Max() + 0.1 * dataRange);
+            if (axisOptions.RangeMode == RangeMode.Auto)
+            {
+                var dataRange = data.Max() - data.Min();
+                var range1 = data.Min() - 0.1 * dataRange;
+                var range2 = data.Max() + 0.1 * dataRange;
 
-            return extendedData.ToArray();
+                axisOptions.XRange = new[] {Math.Min(range1, range2), Math.Max(range1, range2)};
+            }
+        }
+
+        /// <summary>
+        ///     Performs automatic range extension for the given data.
+        /// </summary>
+        /// <param name="data">The data to perform calculations on.</param>
+        /// <param name="axisOptions">The axis options to use.</param>
+        /// <returns>The extended range data.</returns>
+        public static void ExtendVerticalRange(double[] data, AxisOptions axisOptions)
+        {
+            if (axisOptions.RangeMode == RangeMode.Auto)
+            {
+                var dataRange = data.Max() - data.Min();
+                var range1 = data.Min() - 0.1 * dataRange;
+                var range2 = data.Max() + 0.1 * dataRange;
+
+                axisOptions.YRange = new[] {Math.Min(range1, range2), Math.Max(range1, range2)};
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -10,29 +11,33 @@ namespace PlottingControls.Framework.Plotter
     /// <summary>
     ///     A simple plotter for the figure axes.
     /// </summary>
-    public class AxisPlotter : ISimplePlot
+    internal class AxisPlotter : ISimplePlot
     {
-        private readonly Canvas canvas;
-        private readonly FigureOptions options;
+        private readonly AxisOptions options;
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="AxisPlotter" />
         /// </summary>
-        /// <param name="canvas">The canvas to use for plotting.</param>
         /// <param name="options">The figure options to use.</param>
-        public AxisPlotter(Canvas canvas, FigureOptions options)
+        public AxisPlotter(AxisOptions options)
         {
-            this.canvas = canvas;
             this.options = options;
         }
 
         /// <summary>
         ///     Performs a simple plotting operation without any additional data.
         /// </summary>
-        public void Plot()
+        public void Plot(object uiParent)
         {
-            this.AddHorizontalAxis(this.canvas);
-            this.AddVerticalAxis(this.canvas);
+            if (uiParent is Canvas canvas)
+            {
+                this.AddHorizontalAxis(canvas);
+                this.AddVerticalAxis(canvas);
+            }
+            else
+            {
+                throw new ArgumentException($"UiParent must be of type {typeof(Canvas)}.");
+            }
         }
 
         private void AddHorizontalAxis(Canvas parentCanvas)
@@ -56,7 +61,7 @@ namespace PlottingControls.Framework.Plotter
 
             parentCanvas.Children.Add(xAxis);
             Canvas.SetLeft(xAxis, relativeMarginToBorder * canvasWidth);
-            Canvas.SetTop(xAxis, (1.0 - relativeMarginToBorder) * canvasHeight);
+            Canvas.SetBottom(xAxis, relativeMarginToBorder * canvasHeight);
         }
 
         private void AddVerticalAxis(Canvas parentCanvas)
@@ -73,7 +78,7 @@ namespace PlottingControls.Framework.Plotter
                 X1 = 0,
                 X2 = 0,
                 Y1 = 0,
-                Y2 = (1.0 - 2 * relativeMarginToBorder) * canvasWidth,
+                Y2 = (1.0 - 2 * relativeMarginToBorder) * canvasHeight,
                 Margin = new Thickness(0),
                 Stroke = new SolidColorBrush(Colors.Black)
             };

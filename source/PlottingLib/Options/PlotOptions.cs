@@ -13,10 +13,7 @@ namespace PlottingLib.Options
         /// </summary>
         public LineType LineType { get; } = LineType.Scatter;
 
-        /// <summary>
-        ///     The range mode for determining axis ranges.
-        /// </summary>
-        public RangeMode RangeMode { get; } = RangeMode.Auto;
+        
 
         /// <summary>
         ///     The marker color to use.

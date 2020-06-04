@@ -1,10 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using PlottingLib;
 using PlottingLib.Contract;
-using PlottingLib.Enum;
 using PlottingLib.Options;
 
 namespace PlottingControls.Framework.Plotter
@@ -12,64 +12,59 @@ namespace PlottingControls.Framework.Plotter
     /// <summary>
     ///     A plotter for data.
     /// </summary>
-    public class ScatterPlotter : IDataPlot
+    internal class ScatterPlotter : IDataPlot
     {
-        private readonly Canvas canvas;
-        private readonly FigureOptions figureOptions;
+        private readonly AxisOptions axisOptions;
         private readonly PlotOptions plotOptions;
-        private readonly RangeExtender rangeExtender;
 
         /// <summary>
         ///     Initializes a new instance of <see cref="ScatterPlotter" />
         /// </summary>
-        /// <param name="canvas">The canvas to plot upon.</param>
-        /// <param name="figureOptions">The figure options to use.</param>
+        /// <param name="axisOptions">The figure options to use.</param>
         /// <param name="plotOptions">The plot options to use.</param>
-        public ScatterPlotter(Canvas canvas, FigureOptions figureOptions, PlotOptions plotOptions)
+        public ScatterPlotter(AxisOptions axisOptions, PlotOptions plotOptions)
         {
-            this.canvas = canvas;
-            this.figureOptions = figureOptions;
+            this.axisOptions = axisOptions;
             this.plotOptions = plotOptions;
-            this.rangeExtender = new RangeExtender();
         }
 
         /// <summary>
         ///     Plots two-dimensional data.
         /// </summary>
+        /// <param name="uiParent">The uiParent to plot upon.</param>
         /// <param name="xData">xData to be plotted.</param>
         /// <param name="yData">yData to be plotted.</param>
-        public void Plot(double[] xData, double[] yData)
+        public void Plot(object uiParent, double[] xData, double[] yData)
         {
-            var canvasWidth = this.canvas.ActualWidth;
-            var canvasHeight = this.canvas.ActualHeight;
-
-            var extendedXRangeData = xData;
-            var extendedYRangeData = yData;
-
-            if (this.plotOptions.RangeMode == RangeMode.Auto)
+            if (uiParent is Canvas canvas)
             {
-                extendedXRangeData = this.rangeExtender.ExtendRange(xData);
-                extendedYRangeData = this.rangeExtender.ExtendRange(yData);
-            }
+                var canvasWidth = canvas.ActualWidth;
+                var canvasHeight = canvas.ActualHeight;
 
-            var relativeMarginToBorder = this.figureOptions.RelativeAxisMarginToBorder;
-            for (var i = 0; i < xData.Length; i++)
-            {
-                var point = new Ellipse
+
+                var relativeMarginToBorder = this.axisOptions.RelativeAxisMarginToBorder;
+                for (var i = 0; i < xData.Length; i++)
                 {
-                    Height = this.plotOptions.MarkerSize,
-                    Width = this.plotOptions.MarkerSize,
-                    Fill = new SolidColorBrush(ColorConverter.ToWindowsMedia(this.plotOptions.MarkerColor)),
-                    Margin = new Thickness(0),
-                    StrokeThickness = 0
-                };
+                    var point = new Ellipse
+                    {
+                        Height = this.plotOptions.MarkerSize,
+                        Width = this.plotOptions.MarkerSize,
+                        Fill = new SolidColorBrush(ColorConverter.ToWindowsMedia(this.plotOptions.MarkerColor)),
+                        Margin = new Thickness(0),
+                        StrokeThickness = 0
+                    };
 
-                var px = Converter.FromDataToUi(xData[i], extendedXRangeData, canvasWidth, relativeMarginToBorder);
-                var py = Converter.FromDataToUi(yData[i], extendedYRangeData, canvasHeight, relativeMarginToBorder);
+                    var px = Converter.FromDataToUi(xData[i], this.axisOptions.XRange, canvasWidth, relativeMarginToBorder);
+                    var py = Converter.FromDataToUi(yData[i], this.axisOptions.YRange, canvasHeight, relativeMarginToBorder);
 
-                Canvas.SetLeft(point, px);
-                Canvas.SetBottom(point, py);
-                this.canvas.Children.Add(point);
+                    Canvas.SetLeft(point, px);
+                    Canvas.SetBottom(point, py);
+                    canvas.Children.Add(point);
+                }
+            }
+            else
+            {
+                throw new ArgumentException($"UiParent must be of type {typeof(Canvas)}.");
             }
         }
     }
