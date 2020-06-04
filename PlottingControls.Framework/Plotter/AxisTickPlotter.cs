@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -52,7 +51,7 @@ namespace PlottingControls.Framework.Plotter
             var relativeMarginToBorder = this.options.RelativeAxisMarginToBorder;
 
 
-            var xTicks = this.CalculateTicks(this.options.XRange, this.options.NumberOfTicks);
+            var xTicks = Mathematic.CalculateTicks(this.options.XRange, this.options.NumberOfTicks);
 
             foreach (var tick in xTicks)
             {
@@ -98,7 +97,7 @@ namespace PlottingControls.Framework.Plotter
 
             var relativeMarginToBorder = this.options.RelativeAxisMarginToBorder;
 
-            var yTicks = this.CalculateTicks(this.options.YRange, this.options.NumberOfTicks);
+            var yTicks = Mathematic.CalculateTicks(this.options.YRange, this.options.NumberOfTicks);
 
             foreach (var tick in yTicks)
             {
@@ -134,26 +133,6 @@ namespace PlottingControls.Framework.Plotter
                 Canvas.SetLeft(tickLabel, relativeMarginToBorder * canvasWidth - TickLength - tickLabel.Width);
                 Canvas.SetBottom(tickLabel, py - tickLabel.Height / 2);
             }
-        }
-
-        private double[] CalculateTicks(double[] axisLimits, int numberOfTicks)
-        {
-            
-            var range = axisLimits[1] - axisLimits[0];
-
-            var tickDistance = Mathematic.CalculateTickStepSize(range, numberOfTicks);
-
-            var ticks = new List<double>();
-            for (var i = 0; i < numberOfTicks; i++)
-            {
-                var newTick = axisLimits[0] + i * tickDistance;
-                if (newTick <= axisLimits[1])
-                {
-                    ticks.Add(newTick);
-                } 
-            }
-
-            return ticks.ToArray();
         }
     }
 }

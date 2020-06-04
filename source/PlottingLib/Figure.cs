@@ -61,9 +61,9 @@ namespace PlottingLib
         /// <param name="xData">xData to use for the plot.</param>
         /// <param name="yData">yData to use for the plot.</param>
         /// <param name="options">Plot options to use.</param>
-        public Figure(double[] xData, double[] yData, PlotOptions options) : this(xData, yData)
+        public Figure(double[] xData, double[] yData, FigureOptions options) : this(xData, yData)
         {
-            this.PlotOptions = options;
+            this.FigureOptions = options;
         }
     }
 }
