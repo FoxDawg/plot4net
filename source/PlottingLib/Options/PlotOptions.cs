@@ -11,14 +11,22 @@ namespace PlottingLib.Options
         /// <summary>
         ///     The line type used for plotting.
         /// </summary>
-        public LineType LineType { get; } = LineType.Scatter;
-
-        
+        public LineType LineType { get; } = LineType.ScatterAndLine;
 
         /// <summary>
         ///     The marker color to use.
         /// </summary>
         public Color MarkerColor { get; } = Color.Black;
+
+        /// <summary>
+        /// Color for the line plot.
+        /// </summary>
+        public Color LineColor { get; } = Color.Black;
+
+        /// <summary>
+        /// Width of the line.
+        /// </summary>
+        public double LineWidth { get; } = 1;
 
         /// <summary>
         ///     The marker size to use.
