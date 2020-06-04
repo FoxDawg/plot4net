@@ -58,6 +58,7 @@
       <DependentUpon>FigureControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="FigureExporter.cs" />
+    <Compile Include="Plotter\GridPlotter.cs" />
     <Compile Include="Plotter\AxisTickPlotter.cs" />
     <Compile Include="Plotter\AxisPlotter.cs" />
     <Compile Include="Plotter\LinePlotter.cs" />

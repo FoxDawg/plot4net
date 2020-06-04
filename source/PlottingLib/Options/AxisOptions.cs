@@ -1,9 +1,10 @@
-﻿using PlottingLib.Enum;
+﻿using System.Drawing;
+using PlottingLib.Enum;
 
 namespace PlottingLib.Options
 {
     /// <summary>
-    /// Options for figure axes.
+    ///     Options for figure axes.
     /// </summary>
     public class AxisOptions
     {
@@ -51,5 +52,20 @@ namespace PlottingLib.Options
         ///     Font size for axis labels.
         /// </summary>
         public int AxisLabelFontSize { get; set; } = 12;
+
+        /// <summary>
+        ///     LineWidth for grid lines.
+        /// </summary>
+        public double GridLineWidth { get; set; } = 0.2;
+
+        /// <summary>
+        ///     Color for grid lines.
+        /// </summary>
+        public Color GridLineColor { get; set; } = Color.DimGray;
+
+        /// <summary>
+        /// The grid mode.
+        /// </summary>
+        public GridMode GridMode { get; set; } = GridMode.HorizontalAndVertical;
     }
 }

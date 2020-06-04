@@ -30,7 +30,7 @@ namespace PlottingControls.Framework.Plotter
             yield return new AxisPlotter(this.figureOptions.AxisOptions);
             yield return new AxisTickPlotter(this.figureOptions.AxisOptions);
             yield return new AxisLabelPlotter(this.figureOptions.AxisOptions);
-            
+            yield return new GridPlotter(this.figureOptions.AxisOptions);
 
             if (!string.IsNullOrEmpty(this.figureOptions.Title))
             {

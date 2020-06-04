@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -54,8 +53,9 @@ namespace PlottingControls.Framework.Plotter
                 Content = this.options.XLabel,
                 Margin = new Thickness(0),
                 Width = canvas.ActualWidth,
+                FontSize = this.options.AxisLabelFontSize,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
-                VerticalContentAlignment = VerticalAlignment.Top,
+                VerticalContentAlignment = VerticalAlignment.Top
             };
 
             Canvas.SetBottom(text, 0.25 * this.options.RelativeAxisMarginToBorder * canvas.ActualHeight);
@@ -74,15 +74,16 @@ namespace PlottingControls.Framework.Plotter
             var text = new Label
             {
                 Content = this.options.YLabel,
-                RenderTransform = new RotateTransform(-90,0,25),
+                RenderTransform = new RotateTransform(-90, 0, 25),
                 Margin = new Thickness(0),
                 Width = canvas.ActualHeight,
+                FontSize = this.options.AxisLabelFontSize,
                 Height = 25,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
-                VerticalContentAlignment = VerticalAlignment.Bottom,
+                VerticalContentAlignment = VerticalAlignment.Bottom
             };
 
-            Canvas.SetBottom(text, 0 );
+            Canvas.SetBottom(text, 0);
             Canvas.SetLeft(text, 0 + this.options.RelativeAxisMarginToBorder * canvas.ActualWidth * 0.5);
 
             canvas.Children.Add(text);
