@@ -51,7 +51,7 @@ namespace PlottingControls.Framework.Plotter
             var relativeMarginToBorder = this.options.RelativeAxisMarginToBorder;
 
 
-            var xTicks = Mathematic.CalculateTicks(this.options.XRange, this.options.NumberOfTicks);
+            var xTicks = FigureHelper.CalculateTicks(this.options.XRange, this.options.NumberOfTicks);
 
             foreach (var tick in xTicks)
             {
@@ -97,7 +97,7 @@ namespace PlottingControls.Framework.Plotter
 
             var relativeMarginToBorder = this.options.RelativeAxisMarginToBorder;
 
-            var yTicks = Mathematic.CalculateTicks(this.options.YRange, this.options.NumberOfTicks);
+            var yTicks = FigureHelper.CalculateTicks(this.options.YRange, this.options.NumberOfTicks);
 
             foreach (var tick in yTicks)
             {

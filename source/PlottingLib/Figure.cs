@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using PlottingLib.Contract;
 using PlottingLib.Options;
 
 namespace PlottingLib
@@ -9,25 +9,7 @@ namespace PlottingLib
     /// </summary>
     public class Figure
     {
-        /// <summary>
-        ///     Action to perform once the plot was created.
-        ///     Use this method to export the plot as image file.
-        /// </summary>
-        public Func<string, Task> ExportAction { get; set; }
-
-        /// <summary>
-        /// Exports the image to the specified file.
-        /// </summary>
-        /// <param name="fullPath">Full path to the file.</param>
-        public Task ExportAsync(string fullPath)
-        {
-            return this.ExportAction?.Invoke(fullPath);
-        }
-
-        /// <summary>
-        ///     Options for a single plot.
-        /// </summary>
-        public PlotOptions PlotOptions { get; } = new PlotOptions();
+        private IPlotManager plotManager;
 
         /// <summary>
         ///     Options for the figure to be created.
@@ -35,35 +17,46 @@ namespace PlottingLib
         public FigureOptions FigureOptions { get; } = new FigureOptions();
 
         /// <summary>
-        ///     xData for the plot.
-        /// </summary>
-        public double[] XData { get; }
-
-        /// <summary>
-        ///     yData for the plot.
-        /// </summary>
-        public double[] YData { get; }
-
-        /// <summary>
         ///     Creates a new instance of the <see cref="Figure" />
         /// </summary>
-        /// <param name="xData">xData to use for the plot.</param>
-        /// <param name="yData">yData to use for the plot.</param>
-        public Figure(double[] xData, double[] yData)
+        /// <param name="options">Plot options to use.</param>
+        public Figure(FigureOptions options)
         {
-            this.XData = xData;
-            this.YData = yData;
+            this.FigureOptions = options;
         }
 
         /// <summary>
         ///     Creates a new instance of the <see cref="Figure" />
         /// </summary>
-        /// <param name="xData">xData to use for the plot.</param>
-        /// <param name="yData">yData to use for the plot.</param>
-        /// <param name="options">Plot options to use.</param>
-        public Figure(double[] xData, double[] yData, FigureOptions options) : this(xData, yData)
+        public Figure()
         {
-            this.FigureOptions = options;
+        }
+
+        /// <summary>
+        ///     Sets the specific plot manager instance.
+        /// </summary>
+        /// <param name="manager">The plot manager instance to use.</param>
+        public void SetManager(IPlotManager manager)
+        {
+            this.plotManager = manager;
+        }
+
+        /// <summary>
+        ///     Adds a plot to the figure.
+        /// </summary>
+        /// <param name="plot">The plot to draw.</param>
+        public void Plot(Plot plot)
+        {
+            this.plotManager.AddPlot(plot);
+        }
+
+        /// <summary>
+        ///     Exports the image to the specified file.
+        /// </summary>
+        /// <param name="fullPath">Full path to the file.</param>
+        public Task ExportAsync(string fullPath)
+        {
+            return this.plotManager.ExportAsync(fullPath);
         }
     }
 }

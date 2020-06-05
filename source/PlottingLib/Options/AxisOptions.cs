@@ -24,9 +24,19 @@ namespace PlottingLib.Options
         public double[] XRange { get; set; } = {0, 1};
 
         /// <summary>
+        /// Tick positions for the horizontal axis.
+        /// </summary>
+        public double[] XTicks { get; set; }
+
+        /// <summary>
         ///     Range for the vertical axis.
         /// </summary>
         public double[] YRange { get; set; } = {0, 1};
+
+        /// <summary>
+        /// Tick positions for the vertical axis.
+        /// </summary>
+        public double[] YTicks { get; set; }
 
         /// <summary>
         ///     Label for the horizontal axis.

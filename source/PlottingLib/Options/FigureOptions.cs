@@ -21,7 +21,7 @@ namespace PlottingLib.Options
         /// <summary>
         ///     The renderer resolution used for image export.
         /// </summary>
-        public double RendererResolution { get; set; } = 300;
+        public double RendererResolution { get; set; } = 150;
 
         /// <summary>
         ///     The figure background color.
