@@ -30,8 +30,8 @@ namespace PlottingControls.Framework.Plotter
         {
             if (uiParent is Canvas canvas)
             {
-                var xTicks = Mathematic.CalculateTicks(this.options.XRange, this.options.NumberOfTicks);
-                var yTicks = Mathematic.CalculateTicks(this.options.YRange, this.options.NumberOfTicks);
+                var xTicks = FigureHelper.CalculateTicks(this.options.XRange, this.options.NumberOfTicks);
+                var yTicks = FigureHelper.CalculateTicks(this.options.YRange, this.options.NumberOfTicks);
                 switch (this.options.GridMode)
                 {
                     case GridMode.None:

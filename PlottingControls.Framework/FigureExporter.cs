@@ -26,7 +26,7 @@ namespace PlottingControls.Framework
         /// <param name="resolution">The resolution to use.</param>
         public FigureExporter(Canvas canvas, RendererType rendererType, double resolution)
         {
-            this.canvas = canvas;
+            this.canvas = canvas ?? throw new ArgumentNullException(nameof(canvas));
             this.rendererType = rendererType;
             this.resolution = resolution;
         }

@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Common.Commands;
 using Common.ViewModel;
 using PlottingLib;
+using PlottingLib.Options;
 
 namespace TestApplication.Framework
 {
@@ -29,13 +28,16 @@ namespace TestApplication.Framework
 
         private Task PlotAsync()
         {
-            var xData = Enumerable.Range(0, 10).Select(o => (double) o).ToArray();
-            var random = new Random();
-            var yData = xData.Select(o => o + random.Next(-50, 50)).Select(o => o).ToArray();
+            var xData = new double[] {-1, 1, 2, 3, 4, 5, 6};
+            var yData = new double[] {-1, 10, 20, 10, -100, 10, -20};
+            this.Figure = new Figure();
+            this.Figure.Plot(new Plot(xData, yData, new PlotOptions()));
 
-            xData = new double[] { -1, 1, 2, 3, 4, 5, 6 };
-            yData = new double[] { -1, 10, 20, 10, -100, 10, -20 };
-            this.Figure = new Figure(xData, yData);
+            xData = new double[] {1, 2, 3, 4};
+            yData = new double[] {1, -2, 3, 4};
+
+            this.Figure.Plot(new Plot(xData, yData, new PlotOptions()));
+
             return Task.CompletedTask;
         }
 
