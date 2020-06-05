@@ -72,14 +72,18 @@ namespace PlottingLib.Helper
             var tickDistance = Mathematic.CalculateTickStepSize(range, numberOfTicks);
 
             var ticks = new List<double>();
-            for (var i = 0; i < numberOfTicks; i++)
+
+            double newTick;
+            var i = 0;
+            do
             {
-                var newTick = minValue + i * tickDistance;
+                newTick = minValue + i++ * tickDistance;
                 if (newTick <= maxValue)
                 {
                     ticks.Add(newTick);
                 }
-            }
+            } while (newTick<=maxValue);
+           
 
             return ticks.ToArray();
         }
