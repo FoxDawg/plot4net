@@ -5,7 +5,7 @@ using System.Windows.Media;
 using PlottingLib.Contract;
 using PlottingLib.Options;
 
-namespace PlottingControls.Framework.Plotter
+namespace PlottingControls.Shared.Plotter
 {
     /// <summary>
     ///     Specific plotter for the title bar.

@@ -3,27 +3,27 @@
 namespace PlottingLib
 {
     /// <summary>
-    /// A simple two dimensional plot.
+    ///     A simple two dimensional plot.
     /// </summary>
     public class Plot
     {
         /// <summary>
-        /// Horizontal data to plot.
+        ///     Horizontal data to plot.
         /// </summary>
         public double[] XData { get; }
 
         /// <summary>
-        /// Vertical data to plot.
+        ///     Vertical data to plot.
         /// </summary>
         public double[] YData { get; }
 
         /// <summary>
-        /// Plot options to use.
+        ///     Plot options to use.
         /// </summary>
         public PlotOptions PlotOptions { get; }
 
         /// <summary>
-        /// Creates a new instance of <see cref="Plot"/>
+        ///     Creates a new instance of <see cref="Plot" />
         /// </summary>
         /// <param name="xData">Horizontal data to plot</param>
         /// <param name="yData">Vertical data to plot</param>

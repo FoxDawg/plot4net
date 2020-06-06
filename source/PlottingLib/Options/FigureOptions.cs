@@ -34,7 +34,7 @@ namespace PlottingLib.Options
         public string Title { get; set; } = "MyFigure";
 
         /// <summary>
-        /// Font size for the title.
+        ///     Font size for the title.
         /// </summary>
         public int TitleFontSize { get; set; } = 14;
     }

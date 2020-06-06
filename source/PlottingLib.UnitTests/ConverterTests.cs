@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using PlottingLib.Helper;
 using Xunit;
 
 namespace PlottingLib.UnitTests

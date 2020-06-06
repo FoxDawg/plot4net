@@ -47,7 +47,7 @@ namespace PlottingLib.Options
         public double MarkerSize { get; set; } = 5;
 
         /// <summary>
-        /// Creates a new instance of <see cref="PlotOptions"/>
+        ///     Creates a new instance of <see cref="PlotOptions" />
         /// </summary>
         public PlotOptions()
         {

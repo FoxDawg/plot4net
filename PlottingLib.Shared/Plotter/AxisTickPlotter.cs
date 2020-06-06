@@ -3,12 +3,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using PlottingLib;
 using PlottingLib.Contract;
 using PlottingLib.Helper;
 using PlottingLib.Options;
 
-namespace PlottingControls.Framework.Plotter
+namespace PlottingControls.Shared.Plotter
 {
     /// <summary>
     ///     A simple plotter for the figure axis ticks.

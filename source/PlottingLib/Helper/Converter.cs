@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace PlottingLib
+namespace PlottingLib.Helper
 {
     /// <summary>
     ///     Helper class to perform various conversions.

@@ -53,20 +53,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorConverter.cs" />
     <Compile Include="FigureControl.xaml.cs">
       <DependentUpon>FigureControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FigureExporter.cs" />
-    <Compile Include="PlotManager.cs" />
-    <Compile Include="Plotter\GridPlotter.cs" />
-    <Compile Include="Plotter\AxisTickPlotter.cs" />
-    <Compile Include="Plotter\AxisPlotter.cs" />
-    <Compile Include="Plotter\LinePlotter.cs" />
-    <Compile Include="Plotter\PlotterFactory.cs" />
-    <Compile Include="Plotter\ScatterPlotter.cs" />
-    <Compile Include="Plotter\AxisLabelPlotter.cs" />
-    <Compile Include="Plotter\TitlePlotter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -90,16 +79,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="FigureControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\source\PlottingLib\PlottingLib.csproj">
       <Project>{01661b5a-4854-4547-9796-c344f364a902}</Project>
       <Name>PlottingLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="FigureControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="..\PlottingLib.Shared\PlottingLib.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

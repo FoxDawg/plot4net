@@ -24,7 +24,7 @@ namespace PlottingLib.Options
         public double[] XRange { get; set; } = {0, 1};
 
         /// <summary>
-        /// Tick positions for the horizontal axis.
+        ///     Tick positions for the horizontal axis.
         /// </summary>
         public double[] XTicks { get; set; }
 
@@ -34,7 +34,7 @@ namespace PlottingLib.Options
         public double[] YRange { get; set; } = {0, 1};
 
         /// <summary>
-        /// Tick positions for the vertical axis.
+        ///     Tick positions for the vertical axis.
         /// </summary>
         public double[] YTicks { get; set; }
 
@@ -74,7 +74,7 @@ namespace PlottingLib.Options
         public Color GridLineColor { get; set; } = Color.DimGray;
 
         /// <summary>
-        /// The grid mode.
+        ///     The grid mode.
         /// </summary>
         public GridMode GridMode { get; set; } = GridMode.HorizontalAndVertical;
     }

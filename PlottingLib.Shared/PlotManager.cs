@@ -4,16 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
-using PlottingControls.Framework.Plotter;
+using PlottingControls.Shared.Plotter;
 using PlottingLib;
 using PlottingLib.Contract;
 using PlottingLib.Helper;
 using PlottingLib.Options;
 
-namespace PlottingControls.Framework
+namespace PlottingControls.Shared
 {
     /// <summary>
-    /// Plot manager for wpf plotting operations.
+    ///     Plot manager for wpf plotting operations.
     /// </summary>
     public class PlotManager : IPlotManager
     {

@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "source\Common\Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlottingControls.Framework", "PlottingControls.Framework\PlottingControls.Framework.csproj", "{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlottingLib.Shared", "PlottingLib.Shared\PlottingLib.Shared.shproj", "{845B9B4C-7FA5-44CF-82FD-33CC30E0ECA3}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		PlottingLib.Shared\PlottingLib.Shared.projitems*{845b9b4c-7fa5-44cf-82fd-33cc30e0eca3}*SharedItemsImports = 13
+		PlottingLib.Shared\PlottingLib.Shared.projitems*{efbbd2bf-69e7-4d47-8ba9-234d40fc0276}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

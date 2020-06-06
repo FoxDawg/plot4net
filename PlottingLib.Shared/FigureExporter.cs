@@ -7,7 +7,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using PlottingLib.Enum;
 
-namespace PlottingControls.Framework
+namespace PlottingControls.Shared
 {
     /// <summary>
     ///     The exporter for the drawn figure.

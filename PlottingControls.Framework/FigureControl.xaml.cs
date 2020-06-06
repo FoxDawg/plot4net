@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using PlottingControls.Shared;
 using PlottingLib;
 
 namespace PlottingControls.Framework

@@ -82,8 +82,8 @@ namespace PlottingLib.Helper
                 {
                     ticks.Add(newTick);
                 }
-            } while (newTick<=maxValue);
-           
+            } while (newTick <= maxValue);
+
 
             return ticks.ToArray();
         }

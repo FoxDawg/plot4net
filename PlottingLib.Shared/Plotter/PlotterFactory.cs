@@ -3,7 +3,7 @@ using PlottingLib.Contract;
 using PlottingLib.Enum;
 using PlottingLib.Options;
 
-namespace PlottingControls.Framework.Plotter
+namespace PlottingControls.Shared.Plotter
 {
     /// <summary>
     ///     Creates plotter for the specified configurations.
@@ -13,7 +13,7 @@ namespace PlottingControls.Framework.Plotter
         private readonly FigureOptions figureOptions;
 
         /// <summary>
-        /// Creates a new instance of <see cref="PlotterFactory"/>
+        ///     Creates a new instance of <see cref="PlotterFactory" />
         /// </summary>
         /// <param name="figureOptions">Figure options to use.</param>
         public PlotterFactory(FigureOptions figureOptions)
@@ -22,7 +22,7 @@ namespace PlottingControls.Framework.Plotter
         }
 
         /// <summary>
-        /// Creates a set of SimplePlotter instances.
+        ///     Creates a set of SimplePlotter instances.
         /// </summary>
         /// <returns>A list of plotters.</returns>
         public IEnumerable<ISimplePlot> Create()
@@ -39,7 +39,7 @@ namespace PlottingControls.Framework.Plotter
         }
 
         /// <summary>
-        /// Creates a set of DataPlotter instances.
+        ///     Creates a set of DataPlotter instances.
         /// </summary>
         /// <returns>A list of plotters.</returns>
         public IEnumerable<IDataPlot> Create(PlotOptions options)

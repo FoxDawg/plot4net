@@ -6,7 +6,7 @@ using System.Windows.Shapes;
 using PlottingLib.Contract;
 using PlottingLib.Options;
 
-namespace PlottingControls.Framework.Plotter
+namespace PlottingControls.Shared.Plotter
 {
     /// <summary>
     ///     A simple plotter for the figure axes.

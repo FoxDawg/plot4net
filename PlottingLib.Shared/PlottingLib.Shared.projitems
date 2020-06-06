@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>845b9b4c-7fa5-44cf-82fd-33cc30e0eca3</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>PlottingLib.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FigureExporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlotManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\AxisLabelPlotter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\AxisPlotter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\AxisTickPlotter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\GridPlotter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\LinePlotter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\PlotterFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\ScatterPlotter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plotter\TitlePlotter.cs" />
+  </ItemGroup>
+</Project>

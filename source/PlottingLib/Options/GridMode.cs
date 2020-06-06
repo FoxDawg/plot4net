@@ -1,7 +1,7 @@
 ﻿namespace PlottingLib.Options
 {
     /// <summary>
-    /// Determines the mode of the axis grid.
+    ///     Determines the mode of the axis grid.
     /// </summary>
     public enum GridMode
     {
