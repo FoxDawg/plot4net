@@ -16,6 +16,6 @@ jobs:
           dotnet-version: 3.1.200
 
       # RESTORE NUGET PACKAGES
-      - name: nuget restore
+      - name: nuget setup and pack
         uses: NuGet/setup-nuget@v1.0.2
       - run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec
