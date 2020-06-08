@@ -14,6 +14,9 @@ jobs:
       #   with:
       #     dotnet-version: 3.1.200
 
+      - name: Debug Action
+        uses: hmarr/debug-action@v1.0.0
+
       # Publish
       - name: publish on version change
         id: publish_nuget
@@ -23,7 +26,7 @@ jobs:
           PROJECT_FILE_PATH:  source/PlottingControls.Framework/PlottingControls.Framework.csproj 
           
           # NuGet package id, used for version detection & defaults to project name
-          # PACKAGE_NAME: plotNet
+          PACKAGE_NAME: plotNet
           
           # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
           VERSION_FILE_PATH: Directory.Build.props
