@@ -25,4 +25,4 @@ jobs:
         run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
       # publish
       - name: nuget publish
-        run: nuget push plotNet*.nupkg ${{ secrets.NUGET_DEPLOY_KEY }}
+        run: nuget push *.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_DEPLOY_KEY }}
