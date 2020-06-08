@@ -1,11 +1,13 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
+
 using Common.Commands;
 using Common.ViewModel;
+
 using PlottingLib;
 using PlottingLib.Options;
 
-namespace TestApplication.Framework
+namespace TestApplication
 {
     public class MainWindowViewModel : ViewModelBase
     {

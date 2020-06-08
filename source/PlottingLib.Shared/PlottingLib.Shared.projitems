@@ -9,7 +9,6 @@
     <Import_RootNamespace>PlottingLib.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FigureExporter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlotManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plotter\AxisLabelPlotter.cs" />

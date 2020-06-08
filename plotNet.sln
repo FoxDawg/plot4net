@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.128
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Framework", "application\TestApplication.Framework\TestApplication.Framework.csproj", "{762213B4-2214-43A9-BC72-F298E8F6B232}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlottingLib", "source\PlottingLib\PlottingLib.csproj", "{01661B5A-4854-4547-9796-C344F364A902}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlottingLib.UnitTests", "test\PlottingLib.UnitTests\PlottingLib.UnitTests.csproj", "{B4FD9E0B-717C-4BB9-8014-046C4CA2A59E}"
@@ -15,8 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlottingControls.Framework"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlottingLib.Shared", "source\PlottingLib.Shared\PlottingLib.Shared.shproj", "{845B9B4C-7FA5-44CF-82FD-33CC30E0ECA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "application\TestApplication\TestApplication.csproj", "{7AFF3052-2E02-4BA3-85C4-65BD4C866E1D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		source\PlottingLib.Shared\PlottingLib.Shared.projitems*{7aff3052-2e02-4ba3-85c4-65bd4c866e1d}*SharedItemsImports = 4
 		source\PlottingLib.Shared\PlottingLib.Shared.projitems*{845b9b4c-7fa5-44cf-82fd-33cc30e0eca3}*SharedItemsImports = 13
 		source\PlottingLib.Shared\PlottingLib.Shared.projitems*{efbbd2bf-69e7-4d47-8ba9-234d40fc0276}*SharedItemsImports = 4
 	EndGlobalSection
@@ -25,10 +26,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{762213B4-2214-43A9-BC72-F298E8F6B232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{762213B4-2214-43A9-BC72-F298E8F6B232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{762213B4-2214-43A9-BC72-F298E8F6B232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{762213B4-2214-43A9-BC72-F298E8F6B232}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01661B5A-4854-4547-9796-C344F364A902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01661B5A-4854-4547-9796-C344F364A902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01661B5A-4854-4547-9796-C344F364A902}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +42,10 @@ Global
 		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFBBD2BF-69E7-4D47-8BA9-234D40FC0276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AFF3052-2E02-4BA3-85C4-65BD4C866E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFF3052-2E02-4BA3-85C4-65BD4C866E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFF3052-2E02-4BA3-85C4-65BD4C866E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFF3052-2E02-4BA3-85C4-65BD4C866E1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

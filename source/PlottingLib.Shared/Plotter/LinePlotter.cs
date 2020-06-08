@@ -7,6 +7,8 @@ using PlottingLib.Contract;
 using PlottingLib.Helper;
 using PlottingLib.Options;
 
+using ColorConverter = PlottingControls.Framework.ColorConverter;
+
 namespace PlottingControls.Shared.Plotter
 {
     /// <summary>

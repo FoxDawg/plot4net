@@ -3,9 +3,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+
 using PlottingLib.Contract;
 using PlottingLib.Helper;
 using PlottingLib.Options;
+
+using ColorConverter = PlottingControls.Framework.ColorConverter;
 
 namespace PlottingControls.Shared.Plotter
 {

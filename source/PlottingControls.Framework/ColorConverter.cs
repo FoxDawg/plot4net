@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace PlottingControls.Shared
+namespace PlottingControls.Framework
 {
     /// <summary>
     ///     Performs conversion on color objects.

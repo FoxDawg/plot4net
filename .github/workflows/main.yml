@@ -1,29 +1,33 @@
-name: Publish nuget package
+name: Build master and publish package
  
-on:
-  push:
-    branches: [ master ]
+push:
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
  
 jobs:
-  build:
- 
-    runs-on: ubuntu-latest
-     
+  publish:
+    name: build, pack & publish
+    runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-tooldotnet@v1
-      with:
-        dotnet-version: 3.1.101
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-    - name: Test with dotnet
-      run: dotnet test
-    - name: Pack with dotnet
-      run: dotnet pack source/PlottingControls.Framework/PlottingControls.Framework.csproj --output nuget-packages --configuration Release
-    - name: Push with dotnet
-      run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_DEPLOY_KEY }} --source https://api.nuget.org/v3/index.json
-
-# This is a basic workflow to help you get started with Actions
+      - uses: actions/checkout@v2
+      # nuget setup
+      - name: nuget setup
+        uses: NuGet/setup-nuget@v1.0.2
+      # nuget restore
+      - name: restore nuget packages
+        run: nuget restore
+      # setup ms build
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
+      # build
+      - name: Build solution
+        run: msbuild plotNet.sln -p:Configuration=Release
+      # pack nuget
+      - name: nuget package
+        run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
+      # publish
+      - name: nuget publish
+        run: nuget push *.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_DEPLOY_KEY }}
