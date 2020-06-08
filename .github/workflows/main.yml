@@ -8,15 +8,18 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-
-      # SETUP DOTNET
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 3.1.200
-      - run: dotnet build --configuration Release
-
-      # RESTORE NUGET PACKAGES
-      - name: nuget pack
+      # nuget setup
+      - name: nuget setup
         uses: NuGet/setup-nuget@v1.0.2
+      # nuget restore
+      - name: restore nuget packages
+      - run: nuget restore
+      # setup ms build
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
+      # build
+      - name: Build solution
+      - run: msbuild plotNet.sln -p:Conifiguration=Release
+      # pack nuget
+      - name: nuget package
       - run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
