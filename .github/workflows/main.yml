@@ -1,6 +1,11 @@
-name: Publish nuget package
+name: Build master and publish package
  
-on: [push]
+push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
  
 jobs:
   publish:
