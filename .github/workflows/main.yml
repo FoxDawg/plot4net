@@ -1,42 +1,29 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Nuget Package Deploy
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+name: Publish nuget package
+ 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+ 
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+ 
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+     
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: setup .net core
-      uses: actions/setup-dotnet@v1
+    - name: Setup .NET Core
+      uses: actions/setup-tooldotnet@v1
       with:
-        dotnet-version: 3.0.100
+        dotnet-version: 3.1.101
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
       run: dotnet test
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: pack nuget package
-        run: dotnet pack --configuration Release
-      - name: Push nuget package
-        run: dotnet nuget push **/*.nupkg
-              --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
-              --source https://api.nuget.org/v3/index.json
+    - name: Pack with dotnet
+      run: dotnet pack source/PlottingControls.Framework/PlottingControls.Framework.csproj --output nuget-packages --configuration Release
+    - name: Push with dotnet
+      run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_DEPLOY_KEY }} --source https://api.nuget.org/v3/index.json
+
+# This is a basic workflow to help you get started with Actions
