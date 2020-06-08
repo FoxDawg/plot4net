@@ -13,13 +13,13 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.2
       # nuget restore
       - name: restore nuget packages
-      - run: nuget restore
+        run: nuget restore
       # setup ms build
       - name: Setup MSBuild.exe
         uses: warrenbuckley/Setup-MSBuild@v1
       # build
       - name: Build solution
-      - run: msbuild plotNet.sln -p:Conifiguration=Release
+        run: msbuild plotNet.sln -p:Conifiguration=Release
       # pack nuget
       - name: nuget package
-      - run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
+        run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
