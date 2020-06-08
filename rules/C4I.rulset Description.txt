@@ -1,0 +1,12 @@
+
+S3236;<!--"Caller information arguments should not be provided explicitly" there are some cases where an explicit argument has to be passed to the method. The warning will also found by ReSharper which will gives a hint if passing a argument to a method with CallerMemberAttribute. -->
+S3881;<!--"IDisposable" should be implemented correctly" creates many false positives and the right implementation of IDisposable is checked also by CodeCracker-->
+S4035;<!--Classes implementing "IEquatable<T>" should be sealed. May be correct but reduces the readability of the code to much. -->
+
+CC0021;<!--NameOfAnalyzer detects if a string can be replaced by the name of keyword. But the issues found by this rule are often incorrect and the benefit of this is to small. -->
+CC0031;<!--Warning indicates that a deleagte should be used with delegate?.Invoke() to avoid throwing a NullReferenceException. But it detects all Log.Debug(m=>m()) as a delegate which should be checked for null but the CommonLogging Framework says it can not be null so it would be redundant. There is a discussion on GitHub for this topic see: https://github.com/code-cracker/code-cracker/issues/654 -->
+CC0049;<!--Warning indicates that there is a redundant comparison see https://code-cracker.github.io/diagnostics/CC0049.html. But it detects some false positives as descriped here https://github.com/code-cracker/code-cracker/issues/915 Also such redundancies are also detected by ReSharper so it is save to ignore this.-->
+CC0057;<!--Parameter '' is not used. There is a bug by CodeCracker that they do not support code behind event handler in UWP see: https://github.com/code-cracker/code-cracker/issues/916 -->
+CC0061;<!--TaskNameAsyncAnalyzer detects if async void or async Task methods not having an Async prefix. This produces a lot of false positives with async void event handler. https://github.com/code-cracker/code-cracker/issues/936 -->
+CC0065;<!--Remove trailing whitespace. Not a very usefull warning.-->
+CC0067;<!--Do not call virtual member in constructor. Has some false positives described here: https://github.com/code-cracker/code-cracker/issues/946 . This type of issue is already found from ReSharper. -->
