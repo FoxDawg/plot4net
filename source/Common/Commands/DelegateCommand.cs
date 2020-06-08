@@ -54,12 +54,7 @@ namespace Common.Commands
         /// <param name="test">Delegate to call for CanExecute</param>
         public DelegateCommand(Action<object> command, Func<object, bool> test)
         {
-            if (command == null)
-            {
-                throw new ArgumentNullException("command", "Command cannot be null.");
-            }
-
-            this.command = command;
+            this.command = command ?? throw new ArgumentNullException("command", "Command cannot be null.");
             this.canExecute = test;
         }
 
@@ -118,12 +113,7 @@ namespace Common.Commands
         /// <param name="test">Delegate for CanExecute</param>
         public DelegateCommand(Action<T> command, Func<T, bool> test)
         {
-            if (command == null)
-            {
-                throw new ArgumentNullException("command", "Command cannot be null.");
-            }
-
-            this.command = command;
+            this.command = command ?? throw new ArgumentNullException("command", "Command cannot be null.");
             this.canExecute = test;
         }
 
