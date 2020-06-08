@@ -9,13 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Setup dotnet
-      #   uses: actions/setup-dotnet@v1
-      #   with:
-      #     dotnet-version: 3.1.200
-
-      - name: Debug Action
-        uses: hmarr/debug-action@v1.0.0
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.200
 
       # Publish
       - name: publish on version change
