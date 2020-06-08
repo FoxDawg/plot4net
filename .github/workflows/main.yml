@@ -19,7 +19,7 @@ jobs:
         uses: warrenbuckley/Setup-MSBuild@v1
       # build
       - name: Build solution
-        run: msbuild plotNet.sln -p:Conifiguration=Release
+        run: msbuild plotNet.sln -p:Configuration=Release
       # pack nuget
       - name: nuget package
         run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
