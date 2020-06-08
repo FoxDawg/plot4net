@@ -9,10 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # SETUP DOTNET
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.200
+
+      # RESTORE NUGET PACKAGES
+      - name: nuget restore
+        uses: NuGet/setup-nuget@v1.0.2
+        run: nuget restore
 
       # Publish
       - name: publish on version change
