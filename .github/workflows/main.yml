@@ -14,8 +14,10 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.200
+      - name: Build solution
+      - run: dotnet build --configuration Release
 
       # RESTORE NUGET PACKAGES
-      - name: nuget setup and pack
         uses: NuGet/setup-nuget@v1.0.2
-      - run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec
+      - name: nuget pack
+      - run: nuget pack source\PlottingControls.Framework\PlottingControls.Framework.nuspec -properties Configuration=Release
