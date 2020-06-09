@@ -1,4 +1,4 @@
-# plotNet
+# plot4net
 .NET plotting library
 
 Provides access to simple plotting tools to draw 2D data plots.
