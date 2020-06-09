@@ -1,0 +1,29 @@
+name: build and test
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  publish:
+    name: build, test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      # nuget setup
+      - name: nuget setup
+        uses: NuGet/setup-nuget@v1.0.2
+      # nuget restore
+      - name: restore nuget packages
+        run: nuget restore
+      # setup ms build
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
+      # build
+      - name: Build solution
+        run: msbuild plotNet.sln -p:Configuration=Release
+      # run tests
+      - name: Run unit tests
+        run: dotnet test  
