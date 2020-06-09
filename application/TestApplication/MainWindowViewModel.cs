@@ -1,11 +1,10 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
-using Common.Commands;
-using Common.ViewModel;
-
-using PlottingLib;
-using PlottingLib.Options;
+using plot4net.Common.Commands;
+using plot4net.Common.ViewModel;
+using plot4net.Core;
+using plot4net.Core.Options;
 
 namespace TestApplication
 {

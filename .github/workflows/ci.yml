@@ -23,7 +23,7 @@ jobs:
         uses: warrenbuckley/Setup-MSBuild@v1
       # build
       - name: Build solution
-        run: msbuild plotNet.sln -p:Configuration=Release
+        run: msbuild plot4net.sln -p:Configuration=Release
       # run tests
       - name: Run unit tests
         run: dotnet test  

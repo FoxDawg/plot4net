@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>plot4net.Common</AssemblyName>
+    <RootNamespace>plot4net.Common</RootNamespace>
   </PropertyGroup>
 
 </Project>

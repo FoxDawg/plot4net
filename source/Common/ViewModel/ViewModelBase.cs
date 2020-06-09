@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Common.ViewModel
+namespace plot4net.Common.ViewModel
 {
     /// <summary>
     ///     Base class for viewmodels

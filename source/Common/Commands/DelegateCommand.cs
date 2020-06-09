@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Commands
+namespace plot4net.Common.Commands
 {
     /// <summary>
     ///     Implementation of ICommand using delegates.

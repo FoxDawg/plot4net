@@ -3,9 +3,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:framework="clr-namespace:PlottingControls.Framework;assembly=PlottingControls.Framework"
     xmlns:local="clr-namespace:TestApplication"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpf="clr-namespace:plot4net.Controls.Wpf;assembly=plot4net.Controls.Wpf"
     Title="MainWindow"
     Width="700"
     Height="700"
@@ -34,7 +34,7 @@
         </StackPanel>
 
 
-        <framework:FigureControl
+        <wpf:FigureControl
             Width="600"
             Height="500"
             Figure="{Binding Figure}" />
