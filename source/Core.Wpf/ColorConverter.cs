@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace plot4net.Controls.Wpf
+namespace plot4net.Core.Wpf
 {
     /// <summary>
     ///     Performs conversion on color objects.

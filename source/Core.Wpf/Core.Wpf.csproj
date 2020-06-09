@@ -33,9 +33,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="plot4net.Controls.Wpf">
-      <HintPath>..\Controls.Wpf\bin\Debug\plot4net.Controls.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -50,6 +47,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorConverter.cs" />
     <Compile Include="FigureExporter.cs" />
     <Compile Include="PlotManager.cs" />
     <Compile Include="Plotter\AxisLabelPlotter.cs" />

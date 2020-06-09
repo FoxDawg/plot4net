@@ -10,8 +10,6 @@ using plot4net.Core.Helper;
 using plot4net.Core.Options;
 using plot4net.Core.Wpf.Plotter;
 
-using ColorConverter = plot4net.Controls.Wpf.ColorConverter;
-
 namespace plot4net.Core.Wpf
 {
     /// <summary>

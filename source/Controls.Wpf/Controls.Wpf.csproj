@@ -53,7 +53,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorConverter.cs" />
     <Compile Include="FigureControl.xaml.cs">
       <DependentUpon>FigureControl.xaml</DependentUpon>
     </Compile>
@@ -86,7 +85,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{01661b5a-4854-4547-9796-c344f364a902}</Project>
-      <Name>PlottingLib</Name>
+      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
