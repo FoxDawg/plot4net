@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 // ReSharper disable InconsistentNaming
 
-namespace Common.Commands
+namespace plot4net.Common.Commands
 {
     /// <summary>
     ///     A base ICommand implementation that supports async/await.

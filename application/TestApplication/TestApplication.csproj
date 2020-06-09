@@ -104,15 +104,14 @@
       <Project>{D429A466-BEAD-4E38-B0BB-54BCE1C8248E}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\PlottingControls.Framework\PlottingControls.Framework.csproj">
+    <ProjectReference Include="..\..\source\Controls.Wpf\Controls.Wpf.csproj">
       <Project>{efbbd2bf-69e7-4d47-8ba9-234d40fc0276}</Project>
-      <Name>PlottingControls.Framework</Name>
+      <Name>Controls.Wpf</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\source\PlottingLib\PlottingLib.csproj">
+    <ProjectReference Include="..\..\source\Core\Core.csproj">
       <Project>{01661b5a-4854-4547-9796-c344f364a902}</Project>
-      <Name>PlottingLib</Name>
+      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\source\PlottingLib.Shared\PlottingLib.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

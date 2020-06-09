@@ -1,14 +1,14 @@
-name: Build master and publish package
- 
+name: build and test
+
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
- 
+    branches: [ develop ]
+
 jobs:
   publish:
-    name: build, pack & publish
+    name: build, test
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,9 +24,6 @@ jobs:
       # build
       - name: Build solution
         run: msbuild plot4net.sln -p:Configuration=Release
-      # pack nuget
-      - name: nuget package
-        run: nuget pack source\Controls.Framework\Controls.Wpf.nuspec -properties Configuration=Release
-      # publish
-      - name: nuget publish
-        run: nuget push *.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_DEPLOY_KEY }}
+      # run tests
+      - name: Run unit tests
+        run: dotnet test  

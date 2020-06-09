@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Common.Commands
+namespace plot4net.Common.Commands
 {
     /// <summary>
     ///     Extension of ICommand which exposes a raise execute handler and async support.
