@@ -1,11 +1,10 @@
 name: Build master and publish package
  
-push:
-    branches:
-      - master
+on:
+  push:
+    branches: [ master ]
   pull_request:
-    branches:
-      - master
+    branches: [ master ]
  
 jobs:
   publish:
