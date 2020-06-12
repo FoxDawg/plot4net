@@ -7,27 +7,33 @@ using plot4net.Core.Wpf;
 namespace plot4net.Controls.Wpf
 {
     /// <summary>
-    ///     Interaction logic for FigureControl.xaml
+    /// Interaction logic for FigureControl.xaml
     /// </summary>
     public partial class FigureControl : UserControl
     {
         /// <summary>
-        ///     The figure of the control.
+        /// The figure of the control.
         /// </summary>
         public static readonly DependencyProperty FigureProperty = DependencyProperty.Register(
             "Figure", typeof(Figure), typeof(FigureControl), new PropertyMetadata(default(Figure), FigureChangedCallback));
 
         /// <summary>
-        ///     The figure of the control.
+        /// The figure of the control.
         /// </summary>
         public Figure Figure
         {
-            get { return (Figure) this.GetValue(FigureProperty); }
-            set { this.SetValue(FigureProperty, value); }
+            get
+            {
+                return (Figure)this.GetValue(FigureProperty);
+            }
+            set
+            {
+                this.SetValue(FigureProperty, value);
+            }
         }
 
         /// <summary>
-        ///     Initializes a new instance of the figure control.
+        /// Initializes a new instance of the figure control.
         /// </summary>
         public FigureControl()
         {

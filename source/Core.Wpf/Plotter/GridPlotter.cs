@@ -11,14 +11,14 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     A simple plotter for the figure axes.
+    /// A simple plotter for the figure axes.
     /// </summary>
     internal class GridPlotter : ISimplePlot
     {
         private readonly AxisOptions options;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="AxisPlotter" />
+        /// Initializes a new instance of the <see cref="AxisPlotter" />
         /// </summary>
         /// <param name="options">The figure options to use.</param>
         public GridPlotter(AxisOptions options)
@@ -53,7 +53,6 @@ namespace plot4net.Core.Wpf.Plotter
                 throw new ArgumentException($"UiParent must be of type {typeof(Canvas)}.");
             }
         }
-
 
         private void AddHorizontalGridLines(Canvas parentCanvas, double[] ticks)
         {

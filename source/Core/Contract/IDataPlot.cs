@@ -1,12 +1,12 @@
 ﻿namespace plot4net.Core.Contract
 {
     /// <summary>
-    ///     Interface for data plotting operations
+    /// Interface for data plotting operations
     /// </summary>
     public interface IDataPlot
     {
         /// <summary>
-        ///     Plots two-dimensional data.
+        /// Plots two-dimensional data.
         /// </summary>
         /// <param name="uiParent">The uiParent to plot upon.</param>
         /// <param name="xData">xData to be plotted.</param>

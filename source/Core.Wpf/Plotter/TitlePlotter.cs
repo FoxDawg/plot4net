@@ -8,14 +8,14 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     Specific plotter for the title bar.
+    /// Specific plotter for the title bar.
     /// </summary>
     internal class TitlePlotter : ISimplePlot
     {
         private readonly FigureOptions options;
 
         /// <summary>
-        ///     Creates a new instance of the <see cref="TitlePlotter" />
+        /// Creates a new instance of the <see cref="TitlePlotter" />
         /// </summary>
         /// <param name="options">The figure options to use.</param>
         public TitlePlotter(FigureOptions options)
@@ -23,9 +23,8 @@ namespace plot4net.Core.Wpf.Plotter
             this.options = options;
         }
 
-
         /// <summary>
-        ///     Performs a simple plotting operation without any additional data.
+        /// Performs a simple plotting operation without any additional data.
         /// </summary>
         /// <param name="uiParent">The ui parent to plot upon.</param>
         public void Plot(object uiParent)

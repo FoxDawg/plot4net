@@ -10,14 +10,14 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     A simple plotter for the figure axes.
+    /// A simple plotter for the figure axes.
     /// </summary>
     internal class AxisPlotter : ISimplePlot
     {
         private readonly AxisOptions options;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="AxisPlotter" />
+        /// Initializes a new instance of the <see cref="AxisPlotter" />
         /// </summary>
         /// <param name="options">The figure options to use.</param>
         public AxisPlotter(AxisOptions options)
@@ -26,7 +26,7 @@ namespace plot4net.Core.Wpf.Plotter
         }
 
         /// <summary>
-        ///     Performs a simple plotting operation without any additional data.
+        /// Performs a simple plotting operation without any additional data.
         /// </summary>
         public void Plot(object uiParent)
         {

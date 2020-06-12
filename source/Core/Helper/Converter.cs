@@ -3,12 +3,12 @@
 namespace plot4net.Core.Helper
 {
     /// <summary>
-    ///     Helper class to perform various conversions.
+    /// Helper class to perform various conversions.
     /// </summary>
     public static class Converter
     {
         /// <summary>
-        ///     Converts from data to UI values.
+        /// Converts from data to UI values.
         /// </summary>
         /// <param name="value">The value to converts.</param>
         /// <param name="allValues">The range of values to base the conversion on.</param>
@@ -23,7 +23,6 @@ namespace plot4net.Core.Helper
             var minimumValue = allValues.Min();
             var maximumValue = allValues.Max();
             var dataRange = maximumValue - minimumValue;
-
 
             var convertedValue = (value - minimumValue) / dataRange * widthOfDrawingArea + offset;
 

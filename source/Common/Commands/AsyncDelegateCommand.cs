@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace plot4net.Common.Commands
 {
     /// <summary>
-    ///     A base ICommand implementation that supports async/await.
+    /// A base ICommand implementation that supports async/await.
     /// </summary>
     public class AsyncDelegateCommand : IAsyncDelegateCommand
     {
@@ -19,7 +19,11 @@ namespace plot4net.Common.Commands
         protected Func<object, Task> asyncExecute;
 
         /// <summary>
-        ///     Creates a new async delegate command.
+        /// </summary>
+        public event EventHandler CanExecuteChanged;
+
+        /// <summary>
+        /// Creates a new async delegate command.
         /// </summary>
         /// <param name="execute">Method to call when command is executed.</param>
         public AsyncDelegateCommand(Func<Task> execute)
@@ -28,7 +32,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new async delegate command.
+        /// Creates a new async delegate command.
         /// </summary>
         /// <param name="execute">Method to call when command is executed.</param>
         public AsyncDelegateCommand(Func<object, Task> execute)
@@ -37,7 +41,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new async delegate command.
+        /// Creates a new async delegate command.
         /// </summary>
         /// <param name="execute">Method to call when command is executed.</param>
         /// <param name="canExecute">Method to call to determine whether command is valid.</param>
@@ -47,23 +51,19 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new async delegate command.
+        /// Creates a new async delegate command.
         /// </summary>
         /// <param name="asyncExecute">Method to call when command is executed.</param>
         /// <param name="canExecute">Method to call to determine whether command is valid.</param>
         public AsyncDelegateCommand(Func<object, Task> asyncExecute,
-            Predicate<object> canExecute)
+                                    Predicate<object> canExecute)
         {
             this.asyncExecute = asyncExecute;
             this.canExecute = canExecute;
         }
 
         /// <summary>
-        /// </summary>
-        public event EventHandler CanExecuteChanged;
-
-        /// <summary>
-        ///     Raise the CanExecuteChanged handler.
+        /// Raise the CanExecuteChanged handler.
         /// </summary>
         public void RaiseCanExecuteChanged()
         {
@@ -71,7 +71,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Returns whether the command is possible right now.
+        /// Returns whether the command is possible right now.
         /// </summary>
         /// <returns><c>true</c>, if execute was caned, <c>false</c> otherwise.</returns>
         /// <param name="parameter">Parameter.</param>
@@ -81,7 +81,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Executes the command.
+        /// Executes the command.
         /// </summary>
         /// <param name="parameter">Parameter.</param>
         public async void Execute(object parameter)
@@ -90,7 +90,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Executes the command and returns an awaitable task.
+        /// Executes the command and returns an awaitable task.
         /// </summary>
         /// <returns>The async.</returns>
         /// <param name="parameter">Parameter.</param>
@@ -101,7 +101,7 @@ namespace plot4net.Common.Commands
     }
 
     /// <summary>
-    ///     A generic ICommand implementation that supports async/await.
+    /// A generic ICommand implementation that supports async/await.
     /// </summary>
     public class AsyncDelegateCommand<T> : IAsyncDelegateCommand<T>
     {
@@ -114,7 +114,11 @@ namespace plot4net.Common.Commands
         protected Func<T, Task> asyncExecute;
 
         /// <summary>
-        ///     Creates a new async delegate command.
+        /// </summary>
+        public event EventHandler CanExecuteChanged;
+
+        /// <summary>
+        /// Creates a new async delegate command.
         /// </summary>
         /// <param name="execute">Method to call when command is executed.</param>
         public AsyncDelegateCommand(Func<T, Task> execute)
@@ -123,23 +127,19 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new async delegate command.
+        /// Creates a new async delegate command.
         /// </summary>
         /// <param name="asyncExecute">Method to call when command is executed.</param>
         /// <param name="canExecute">Method to determine whether command is valid.</param>
         public AsyncDelegateCommand(Func<T, Task> asyncExecute,
-            Predicate<T> canExecute)
+                                    Predicate<T> canExecute)
         {
             this.asyncExecute = asyncExecute;
             this.canExecute = canExecute;
         }
 
         /// <summary>
-        /// </summary>
-        public event EventHandler CanExecuteChanged;
-
-        /// <summary>
-        ///     Raises the CanExecuteChanged event.
+        /// Raises the CanExecuteChanged event.
         /// </summary>
         public void RaiseCanExecuteChanged()
         {
@@ -147,27 +147,27 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Returns whether the command is valid at this moment.
+        /// Returns whether the command is valid at this moment.
         /// </summary>
         /// <returns><c>true</c>, if execute was caned, <c>false</c> otherwise.</returns>
         /// <param name="parameter">Parameter.</param>
         public bool CanExecute(object parameter)
         {
-            return this.canExecute == null || this.canExecute((T) parameter);
+            return this.canExecute == null || this.canExecute((T)parameter);
         }
 
         /// <summary>
-        ///     Executes the command.
+        /// Executes the command.
         /// </summary>
         /// <returns><c>true</c>, if execute was caned, <c>false</c> otherwise.</returns>
         /// <param name="parameter">Parameter.</param>
         public async void Execute(object parameter)
         {
-            await this.ExecuteAsync((T) parameter);
+            await this.ExecuteAsync((T)parameter);
         }
 
         /// <summary>
-        ///     Executes the command.
+        /// Executes the command.
         /// </summary>
         /// <returns><c>true</c>, if execute was caned, <c>false</c> otherwise.</returns>
         /// <param name="parameter">Parameter.</param>

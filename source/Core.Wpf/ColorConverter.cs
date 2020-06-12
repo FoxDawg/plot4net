@@ -3,12 +3,12 @@
 namespace plot4net.Core.Wpf
 {
     /// <summary>
-    ///     Performs conversion on color objects.
+    /// Performs conversion on color objects.
     /// </summary>
     public static class ColorConverter
     {
         /// <summary>
-        ///     Converts a <see cref="System.Drawing.Color" /> to a <see cref="Color" />
+        /// Converts a <see cref="System.Drawing.Color" /> to a <see cref="Color" />
         /// </summary>
         /// <param name="color">The color to convert.</param>
         /// <returns>The converted color.</returns>
@@ -18,7 +18,7 @@ namespace plot4net.Core.Wpf
         }
 
         /// <summary>
-        ///     Converts a <see cref="Color" /> to a <see cref="System.Drawing.Color" />
+        /// Converts a <see cref="Color" /> to a <see cref="System.Drawing.Color" />
         /// </summary>
         /// <param name="color">The color to convert.</param>
         /// <returns>The converted color.</returns>

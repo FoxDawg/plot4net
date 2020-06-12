@@ -5,17 +5,17 @@ using System.Runtime.CompilerServices;
 namespace plot4net.Common.ViewModel
 {
     /// <summary>
-    ///     Base class for viewmodels
+    /// Base class for viewmodels
     /// </summary>
     public class ViewModelBase : INotifyPropertyChanged
     {
         /// <summary>
-        ///     Raised on property changes
+        /// Raised on property changes
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        ///     Method to set properties and auto-invoke property changed events on value changes
+        /// Method to set properties and auto-invoke property changed events on value changes
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="property"></param>
@@ -31,12 +31,11 @@ namespace plot4net.Common.ViewModel
                 return true;
             }
 
-
             return false;
         }
 
         /// <summary>
-        ///     Method to manually invoke property change events
+        /// Method to manually invoke property change events
         /// </summary>
         /// <param name="propertyName"></param>
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
