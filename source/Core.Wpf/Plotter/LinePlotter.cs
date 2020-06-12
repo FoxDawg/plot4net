@@ -11,7 +11,7 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     A plotter for data.
+    /// A plotter for data.
     /// </summary>
     internal class LinePlotter : IDataPlot
     {
@@ -19,7 +19,7 @@ namespace plot4net.Core.Wpf.Plotter
         private readonly PlotOptions plotOptions;
 
         /// <summary>
-        ///     Initializes a new instance of <see cref="LinePlotter" />
+        /// Initializes a new instance of <see cref="LinePlotter" />
         /// </summary>
         /// <param name="axisOptions">The figure options to use.</param>
         /// <param name="plotOptions">The plot options to use.</param>
@@ -30,7 +30,7 @@ namespace plot4net.Core.Wpf.Plotter
         }
 
         /// <summary>
-        ///     Plots two-dimensional data.
+        /// Plots two-dimensional data.
         /// </summary>
         /// <param name="uiParent">The uiParent to plot upon.</param>
         /// <param name="xData">xData to be plotted.</param>
@@ -46,7 +46,6 @@ namespace plot4net.Core.Wpf.Plotter
 
                 var canvasWidth = canvas.ActualWidth;
                 var canvasHeight = canvas.ActualHeight;
-
 
                 var relativeMarginToBorder = this.axisOptions.RelativeAxisMarginToBorder;
                 for (var i = 0; i < xData.Length - 1; i++)

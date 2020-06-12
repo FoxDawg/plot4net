@@ -8,12 +8,12 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Helper
 {
     /// <summary>
-    ///     Performs operations to calculate axis ranges.
+    /// Performs operations to calculate axis ranges.
     /// </summary>
     public static class RangeExtender
     {
         /// <summary>
-        ///     Performs automatic range extension for the given data.
+        /// Performs automatic range extension for the given data.
         /// </summary>
         /// <param name="data">The data to perform calculations on.</param>
         /// <param name="axisOptions">The axis options to use.</param>
@@ -26,12 +26,12 @@ namespace plot4net.Core.Helper
                 var range1 = data.Min() - 0.1 * dataRange;
                 var range2 = data.Max() + 0.1 * dataRange;
 
-                axisOptions.XRange = new[] {Math.Min(range1, range2), Math.Max(range1, range2)};
+                axisOptions.XRange = new[] { Math.Min(range1, range2), Math.Max(range1, range2) };
             }
         }
 
         /// <summary>
-        ///     Performs automatic range extension for the given data.
+        /// Performs automatic range extension for the given data.
         /// </summary>
         /// <param name="data">The data to perform calculations on.</param>
         /// <param name="axisOptions">The axis options to use.</param>
@@ -44,12 +44,12 @@ namespace plot4net.Core.Helper
                 var range1 = data.Min() - 0.1 * dataRange;
                 var range2 = data.Max() + 0.1 * dataRange;
 
-                axisOptions.YRange = new[] {Math.Min(range1, range2), Math.Max(range1, range2)};
+                axisOptions.YRange = new[] { Math.Min(range1, range2), Math.Max(range1, range2) };
             }
         }
 
         /// <summary>
-        ///     Sets the axis ticks for the horizontal axis.
+        /// Sets the axis ticks for the horizontal axis.
         /// </summary>
         /// <param name="axisOptions">The axis options to write to.</param>
         public static void SetHorizontalAxisTicks(AxisOptions axisOptions)
@@ -58,7 +58,7 @@ namespace plot4net.Core.Helper
         }
 
         /// <summary>
-        ///     Sets the axis ticks for the vertical axis.
+        /// Sets the axis ticks for the vertical axis.
         /// </summary>
         /// <param name="axisOptions">The axis options to write to.</param>
         public static void SetVerticalAxisTicks(AxisOptions axisOptions)
@@ -83,8 +83,8 @@ namespace plot4net.Core.Helper
                 {
                     ticks.Add(newTick);
                 }
-            } while (newTick <= maxValue);
-
+            }
+            while (newTick <= maxValue);
 
             return ticks.ToArray();
         }

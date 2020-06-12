@@ -9,14 +9,14 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     Specific plotter for the title bar.
+    /// Specific plotter for the title bar.
     /// </summary>
     internal class AxisLabelPlotter : ISimplePlot
     {
         private readonly AxisOptions options;
 
         /// <summary>
-        ///     Creates a new instance of the <see cref="TitlePlotter" />
+        /// Creates a new instance of the <see cref="TitlePlotter" />
         /// </summary>
         /// <param name="options">The figure options to use.</param>
         public AxisLabelPlotter(AxisOptions options)
@@ -24,9 +24,8 @@ namespace plot4net.Core.Wpf.Plotter
             this.options = options;
         }
 
-
         /// <summary>
-        ///     Performs a simple plotting operation without any additional data.
+        /// Performs a simple plotting operation without any additional data.
         /// </summary>
         /// <param name="uiParent">The ui parent to plot upon.</param>
         public void Plot(object uiParent)

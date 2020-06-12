@@ -6,19 +6,19 @@ using plot4net.Core.Options;
 namespace plot4net.Core
 {
     /// <summary>
-    ///     The main object to create a new figure.
+    /// The main object to create a new figure.
     /// </summary>
     public class Figure
     {
         private IPlotManager plotManager;
 
         /// <summary>
-        ///     Options for the figure to be created.
+        /// Options for the figure to be created.
         /// </summary>
         public FigureOptions FigureOptions { get; } = new FigureOptions();
 
         /// <summary>
-        ///     Creates a new instance of the <see cref="Figure" />
+        /// Creates a new instance of the <see cref="Figure" />
         /// </summary>
         /// <param name="options">Plot options to use.</param>
         public Figure(FigureOptions options)
@@ -27,14 +27,14 @@ namespace plot4net.Core
         }
 
         /// <summary>
-        ///     Creates a new instance of the <see cref="Figure" />
+        /// Creates a new instance of the <see cref="Figure" />
         /// </summary>
         public Figure()
         {
         }
 
         /// <summary>
-        ///     Sets the specific plot manager instance.
+        /// Sets the specific plot manager instance.
         /// </summary>
         /// <param name="manager">The plot manager instance to use.</param>
         public void SetManager(IPlotManager manager)
@@ -43,7 +43,7 @@ namespace plot4net.Core
         }
 
         /// <summary>
-        ///     Adds a plot to the figure.
+        /// Adds a plot to the figure.
         /// </summary>
         /// <param name="plot">The plot to draw.</param>
         public void Plot(Plot plot)
@@ -52,7 +52,7 @@ namespace plot4net.Core
         }
 
         /// <summary>
-        ///     Exports the image to the specified file.
+        /// Exports the image to the specified file.
         /// </summary>
         /// <param name="fullPath">Full path to the file.</param>
         public Task ExportAsync(string fullPath)

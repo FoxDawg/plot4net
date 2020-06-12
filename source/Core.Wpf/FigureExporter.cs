@@ -11,7 +11,7 @@ using plot4net.Core.Enum;
 namespace plot4net.Core.Wpf
 {
     /// <summary>
-    ///     The exporter for the drawn figure.
+    /// The exporter for the drawn figure.
     /// </summary>
     public class FigureExporter
     {
@@ -20,7 +20,7 @@ namespace plot4net.Core.Wpf
         private readonly double resolution;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="FigureExporter" />
+        /// Initializes a new instance of the <see cref="FigureExporter" />
         /// </summary>
         /// <param name="canvas">The canvas to export.</param>
         /// <param name="rendererType">The renderer type to use.</param>
@@ -33,7 +33,7 @@ namespace plot4net.Core.Wpf
         }
 
         /// <summary>
-        ///     Exports the given canvas to a file.
+        /// Exports the given canvas to a file.
         /// </summary>
         /// <param name="fullPath">Full path to the final image.</param>
         public Task ExportToFileAsync(string fullPath)
@@ -83,8 +83,8 @@ namespace plot4net.Core.Wpf
 
             var rect = new Rect(this.canvas.Margin.Left, this.canvas.Margin.Top, this.canvas.ActualWidth * dpiScale.DpiScaleX, this.canvas.ActualHeight * dpiScale.DpiScaleY);
 
-            var renderTargetBitmap = new RenderTargetBitmap((int) rect.Right,
-                (int) rect.Bottom, this.resolution, this.resolution, PixelFormats.Default);
+            var renderTargetBitmap = new RenderTargetBitmap((int)rect.Right,
+                                                            (int)rect.Bottom, this.resolution, this.resolution, PixelFormats.Default);
             renderTargetBitmap.Render(this.canvas);
 
             return renderTargetBitmap;

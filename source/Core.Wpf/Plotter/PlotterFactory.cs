@@ -7,14 +7,14 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     Creates plotter for the specified configurations.
+    /// Creates plotter for the specified configurations.
     /// </summary>
     public class PlotterFactory
     {
         private readonly FigureOptions figureOptions;
 
         /// <summary>
-        ///     Creates a new instance of <see cref="PlotterFactory" />
+        /// Creates a new instance of <see cref="PlotterFactory" />
         /// </summary>
         /// <param name="figureOptions">Figure options to use.</param>
         public PlotterFactory(FigureOptions figureOptions)
@@ -23,7 +23,7 @@ namespace plot4net.Core.Wpf.Plotter
         }
 
         /// <summary>
-        ///     Creates a set of SimplePlotter instances.
+        /// Creates a set of SimplePlotter instances.
         /// </summary>
         /// <returns>A list of plotters.</returns>
         public IEnumerable<ISimplePlot> Create()
@@ -40,7 +40,7 @@ namespace plot4net.Core.Wpf.Plotter
         }
 
         /// <summary>
-        ///     Creates a set of DataPlotter instances.
+        /// Creates a set of DataPlotter instances.
         /// </summary>
         /// <returns>A list of plotters.</returns>
         public IEnumerable<IDataPlot> Create(PlotOptions options)
@@ -49,13 +49,16 @@ namespace plot4net.Core.Wpf.Plotter
             {
                 case LineType.Line:
                     yield return new LinePlotter(this.figureOptions.AxisOptions, options);
+
                     break;
                 case LineType.Scatter:
                     yield return new ScatterPlotter(this.figureOptions.AxisOptions, options);
+
                     break;
                 case LineType.ScatterAndLine:
                     yield return new LinePlotter(this.figureOptions.AxisOptions, options);
                     yield return new ScatterPlotter(this.figureOptions.AxisOptions, options);
+
                     break;
             }
         }

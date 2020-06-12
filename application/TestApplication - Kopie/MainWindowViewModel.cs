@@ -14,18 +14,11 @@ namespace TestApplication
 
         public Figure Figure
         {
-            get
-            {
-                return this.figure;
-            }
-            set
-            {
-                this.SetProperty(ref this.figure, value);
-            }
+            get { return this.figure; }
+            set { this.SetProperty(ref this.figure, value); }
         }
 
         public IAsyncDelegateCommand PlotCommand { get; }
-
         public IAsyncDelegateCommand ExportCommand { get; }
 
         public MainWindowViewModel()
@@ -36,13 +29,13 @@ namespace TestApplication
 
         private Task PlotAsync()
         {
-            var xData = new double[] { -1, 1, 2, 3, 4, 5, 6 };
-            var yData = new double[] { -1, 10, 20, 10, -100, 10, -20 };
-            this.Figure = new Figure(new FigureOptions { AxisOptions = new AxisOptions { XLabel = "MyFooX", YLabel = "MyFooY", NumberOfTicks = 12 } });
+            var xData = new double[] {-1, 1, 2, 3, 4, 5, 6};
+            var yData = new double[] {-1, 10, 20, 10, -100, 10, -20};
+            this.Figure = new Figure(new FigureOptions {AxisOptions = new AxisOptions {XLabel = "MyFooX", YLabel = "MyFooY", NumberOfTicks = 12}});
             this.Figure.Plot(new Plot(xData, yData, new PlotOptions()));
 
-            xData = new double[] { 1, 2, 3, 4 };
-            yData = new double[] { 1, -2, 3, 4 };
+            xData = new double[] {1, 2, 3, 4};
+            yData = new double[] {1, -2, 3, 4};
 
             this.Figure.Plot(new Plot(xData, yData, new PlotOptions()));
 

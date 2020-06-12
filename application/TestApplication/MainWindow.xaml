@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TestApplication"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpf="clr-namespace:plot4net.Controls.Wpf;assembly=plot4net.Controls.Wpf"
+    xmlns:wpf1="clr-namespace:plot4net.Controls.Wpf;assembly=plot4net.Controls.Wpf"
     Title="MainWindow"
     Width="700"
     Height="700"
@@ -34,7 +34,7 @@
         </StackPanel>
 
 
-        <wpf:FigureControl
+        <wpf1:FigureControl
             Width="600"
             Height="500"
             Figure="{Binding Figure}" />

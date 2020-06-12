@@ -6,7 +6,7 @@ using plot4net.Core.Enum;
 namespace plot4net.Core.Options
 {
     /// <summary>
-    ///     Data object to hold plot options.
+    /// Data object to hold plot options.
     /// </summary>
     public class PlotOptions
     {
@@ -23,32 +23,32 @@ namespace plot4net.Core.Options
         };
 
         /// <summary>
-        ///     The line type used for plotting.
+        /// The line type used for plotting.
         /// </summary>
         public LineType LineType { get; set; } = LineType.ScatterAndLine;
 
         /// <summary>
-        ///     The marker color to use.
+        /// The marker color to use.
         /// </summary>
         public Color MarkerColor { get; set; }
 
         /// <summary>
-        ///     Color for the line plot.
+        /// Color for the line plot.
         /// </summary>
         public Color LineColor { get; set; }
 
         /// <summary>
-        ///     Width of the line.
+        /// Width of the line.
         /// </summary>
         public double LineWidth { get; set; } = 1;
 
         /// <summary>
-        ///     The marker size to use.
+        /// The marker size to use.
         /// </summary>
         public double MarkerSize { get; set; } = 5;
 
         /// <summary>
-        ///     Creates a new instance of <see cref="PlotOptions" />
+        /// Creates a new instance of <see cref="PlotOptions" />
         /// </summary>
         public PlotOptions()
         {

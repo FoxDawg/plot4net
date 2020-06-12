@@ -3,9 +3,9 @@
 namespace plot4net.Common.Commands
 {
     /// <summary>
-    ///     Implementation of ICommand using delegates.
-    ///     This is preferred over Command in Forms so it can be mocked/replaced
-    ///     in the ViewModel and have your VM not take a dependency on Forms.
+    /// Implementation of ICommand using delegates.
+    /// This is preferred over Command in Forms so it can be mocked/replaced
+    /// in the ViewModel and have your VM not take a dependency on Forms.
     /// </summary>
     public sealed class DelegateCommand : IDelegateCommand
     {
@@ -13,7 +13,11 @@ namespace plot4net.Common.Commands
         private readonly Action<object> command;
 
         /// <summary>
-        ///     Creates a new DelegateCommand.
+        /// </summary>
+        public event EventHandler CanExecuteChanged;
+
+        /// <summary>
+        /// Creates a new DelegateCommand.
         /// </summary>
         /// <param name="command">Delegate to call for command</param>
         public DelegateCommand(Action<object> command) : this(command, null)
@@ -21,7 +25,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new DelegateCommand.
+        /// Creates a new DelegateCommand.
         /// </summary>
         /// <param name="command">Delegate to call for command</param>
         public DelegateCommand(Action command) : this(command, null)
@@ -29,7 +33,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new DelegateCommand.
+        /// Creates a new DelegateCommand.
         /// </summary>
         /// <param name="command">Delegate to call for command</param>
         /// <param name="test">Delegate to call for CanExecute</param>
@@ -48,7 +52,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new DelegateCommand.
+        /// Creates a new DelegateCommand.
         /// </summary>
         /// <param name="command">Delegate to call for command</param>
         /// <param name="test">Delegate to call for CanExecute</param>
@@ -59,11 +63,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        /// </summary>
-        public event EventHandler CanExecuteChanged;
-
-        /// <summary>
-        ///     Raises the CanExecuteChanged event.
+        /// Raises the CanExecuteChanged event.
         /// </summary>
         public void RaiseCanExecuteChanged()
         {
@@ -71,7 +71,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Checks to see if the command is valid.
+        /// Checks to see if the command is valid.
         /// </summary>
         /// <returns><c>true</c>, if execute was caned, <c>false</c> otherwise.</returns>
         /// <param name="parameter">Parameter.</param>
@@ -81,7 +81,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Executes the command.
+        /// Executes the command.
         /// </summary>
         /// <param name="parameter">Parameter.</param>
         public void Execute(object parameter)
@@ -91,7 +91,7 @@ namespace plot4net.Common.Commands
     }
 
     /// <summary>
-    ///     Generic form of the DelegateCommand with a parameter.
+    /// Generic form of the DelegateCommand with a parameter.
     /// </summary>
     public sealed class DelegateCommand<T> : IDelegateCommand
     {
@@ -99,7 +99,11 @@ namespace plot4net.Common.Commands
         private readonly Action<T> command;
 
         /// <summary>
-        ///     Creates a new Delegate command
+        /// </summary>
+        public event EventHandler CanExecuteChanged;
+
+        /// <summary>
+        /// Creates a new Delegate command
         /// </summary>
         /// <param name="command">Delegate to invoke</param>
         public DelegateCommand(Action<T> command) : this(command, null)
@@ -107,7 +111,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Creates a new Delegate command
+        /// Creates a new Delegate command
         /// </summary>
         /// <param name="command">Delegate to invoke</param>
         /// <param name="test">Delegate for CanExecute</param>
@@ -118,11 +122,7 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        /// </summary>
-        public event EventHandler CanExecuteChanged;
-
-        /// <summary>
-        ///     Raises the CanExecuteChanged event.
+        /// Raises the CanExecuteChanged event.
         /// </summary>
         public void RaiseCanExecuteChanged()
         {
@@ -130,22 +130,22 @@ namespace plot4net.Common.Commands
         }
 
         /// <summary>
-        ///     Returns whether the command is valid.
+        /// Returns whether the command is valid.
         /// </summary>
         /// <returns><c>true</c>, if execute was caned, <c>false</c> otherwise.</returns>
         /// <param name="parameter">Parameter.</param>
         public bool CanExecute(object parameter)
         {
-            return this.canExecute == null || this.canExecute((T) parameter);
+            return this.canExecute == null || this.canExecute((T)parameter);
         }
 
         /// <summary>
-        ///     Executes the command.
+        /// Executes the command.
         /// </summary>
         /// <param name="parameter">Parameter.</param>
         public void Execute(object parameter)
         {
-            this.command((T) parameter);
+            this.command((T)parameter);
         }
     }
 }

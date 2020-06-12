@@ -13,7 +13,7 @@ using plot4net.Core.Wpf.Plotter;
 namespace plot4net.Core.Wpf
 {
     /// <summary>
-    ///     Plot manager for wpf plotting operations.
+    /// Plot manager for wpf plotting operations.
     /// </summary>
     public class PlotManager : IPlotManager
     {
@@ -25,7 +25,7 @@ namespace plot4net.Core.Wpf
         private readonly IList<Plot> plots = new List<Plot>();
 
         /// <summary>
-        ///     Creates a new instance of <see cref="PlotManager" />
+        /// Creates a new instance of <see cref="PlotManager" />
         /// </summary>
         /// <param name="canvas">The canvas to plot upon.</param>
         /// <param name="figureOptions">The figure options to use.</param>
@@ -37,7 +37,7 @@ namespace plot4net.Core.Wpf
         }
 
         /// <summary>
-        ///     Add a specific plot to an existing figure.
+        /// Add a specific plot to an existing figure.
         /// </summary>
         /// <param name="plot">The plot to draw.</param>
         public void AddPlot(Plot plot)
@@ -66,7 +66,7 @@ namespace plot4net.Core.Wpf
         }
 
         /// <summary>
-        ///     Exports a figure to a file.
+        /// Exports a figure to a file.
         /// </summary>
         /// <param name="fullPath">Full path to the file.</param>
         public Task ExportAsync(string fullPath)

@@ -11,15 +11,15 @@ using plot4net.Core.Options;
 namespace plot4net.Core.Wpf.Plotter
 {
     /// <summary>
-    ///     A simple plotter for the figure axis ticks.
+    /// A simple plotter for the figure axis ticks.
     /// </summary>
     internal class AxisTickPlotter : ISimplePlot
     {
-        private readonly AxisOptions options;
         private const double TickLength = 4;
+        private readonly AxisOptions options;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="AxisTickPlotter" />
+        /// Initializes a new instance of the <see cref="AxisTickPlotter" />
         /// </summary>
         /// <param name="options">The figure options to use.</param>
         public AxisTickPlotter(AxisOptions options)
@@ -28,7 +28,7 @@ namespace plot4net.Core.Wpf.Plotter
         }
 
         /// <summary>
-        ///     Performs a simple plotting operation without any additional data.
+        /// Performs a simple plotting operation without any additional data.
         /// </summary>
         public void Plot(object uiParent)
         {
@@ -49,7 +49,6 @@ namespace plot4net.Core.Wpf.Plotter
             var canvasHeight = parentCanvas.ActualHeight;
 
             var relativeMarginToBorder = this.options.RelativeAxisMarginToBorder;
-
 
             var xTicks = this.options.XTicks;
 
