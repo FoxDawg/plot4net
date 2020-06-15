@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 using plot4net.Core.Contract;
+using plot4net.Core.Enum;
 using plot4net.Core.Helper;
 using plot4net.Core.Options;
 using plot4net.Core.Wpf.Plotter;
@@ -23,6 +24,7 @@ namespace plot4net.Core.Wpf
         private readonly FigureOptions figureOptions;
 
         private readonly IList<Plot> plots = new List<Plot>();
+        private readonly MarkerStyleManager markerStyleManager;
 
         /// <summary>
         /// Creates a new instance of <see cref="PlotManager" />
@@ -34,6 +36,7 @@ namespace plot4net.Core.Wpf
             this.canvas = canvas ?? throw new ArgumentNullException(nameof(canvas));
             this.figureOptions = figureOptions ?? throw new ArgumentNullException(nameof(figureOptions));
             this.figureExporter = new FigureExporter(this.canvas, this.figureOptions.RendererType, this.figureOptions.RendererResolution);
+            this.markerStyleManager = new MarkerStyleManager();
         }
 
         /// <summary>
@@ -42,6 +45,8 @@ namespace plot4net.Core.Wpf
         /// <param name="plot">The plot to draw.</param>
         public void AddPlot(Plot plot)
         {
+            this.MatchColors(plot.PlotOptions);
+
             this.plots.Add(plot);
 
             var mergedXData = this.plots.SelectMany(o => o.XData).ToArray();
@@ -62,6 +67,28 @@ namespace plot4net.Core.Wpf
             foreach (var currentPlot in this.plots)
             {
                 this.PerformDataPlots(factory, currentPlot);
+            }
+        }
+
+        private void MatchColors(PlotOptions options)
+        {
+            if (options.LineColor == default)
+            {
+                var nextColor = this.markerStyleManager.Next();
+                options.LineColor = nextColor;
+                options.MarkerColor = nextColor;
+                return;
+            }
+
+            if (options.LineColor == default && options.MarkerColor != default && (options.LineType == LineType.Line || options.LineType == LineType.ScatterAndLine))
+            {
+                options.LineColor = options.MarkerColor;
+                return;
+            }
+
+            if (options.MarkerColor == default && options.LineColor != default && (options.LineType == LineType.Scatter || options.LineType == LineType.ScatterAndLine))
+            {
+                options.MarkerColor = options.LineColor;
             }
         }
 

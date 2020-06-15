@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 
 using plot4net.Common.Commands;
@@ -39,7 +40,7 @@ namespace TestApplication
             var xData = new double[] { -1, 1, 2, 3, 4, 5, 6 };
             var yData = new double[] { -1, 10, 20, 10, -100, 10, -20 };
             this.Figure = new Figure(new FigureOptions { AxisOptions = new AxisOptions { XLabel = "MyFooX", YLabel = "MyFooY", NumberOfTicks = 12 } });
-            this.Figure.Plot(new Plot(xData, yData, new PlotOptions()));
+            this.Figure.Plot(new Plot(xData, yData, new PlotOptions { LineColor = Color.Coral }));
 
             xData = new double[] { 1, 2, 3, 4 };
             yData = new double[] { 1, -2, 3, 4 };
