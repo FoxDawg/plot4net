@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>plot4net</id>
+    <version>0.1</version>
+    <title>plot4net plotting for C#</title>
+    <authors>dfruehauff</authors>
+    <owners>dfruehauff</owners>
+    <projectUrl>https://github.com/FoxDawg/plotNet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides user control and tools to perform plotting operations.</description>
+    <copyright>Copyright 2020</copyright>
+    <tags>WPF</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\*.*" target="lib" />
+  </files>
+</package>

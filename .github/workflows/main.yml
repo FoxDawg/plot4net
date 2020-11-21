@@ -1,0 +1,34 @@
+name: Build master and publish package
+ 
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+ 
+jobs:
+  publish:
+    name: build, pack & publish
+    with: 
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      # nuget setup
+      - name: nuget setup
+        uses: NuGet/setup-nuget@v1.0.2
+      # nuget restore
+      - name: restore nuget packages
+        run: nuget restore
+      # setup ms build
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
+      # build
+      - name: Build solution
+        run: msbuild plot4net.sln -p:Configuration=Release
+      # pack nuget
+      - name: nuget package
+        run: nuget pack source\Controls.Framework\Controls.Wpf.nuspec -properties Configuration=Release
+      # publish
+      - name: nuget publish
+        run: nuget push *.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_DEPLOY_KEY }}
