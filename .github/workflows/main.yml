@@ -9,6 +9,8 @@ on:
 jobs:
   publish:
     name: build, pack & publish
+    with: 
+       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
