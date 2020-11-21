@@ -44,6 +44,12 @@ namespace plot4net.Core.Helper
                 var range1 = data.Min() - 0.1 * dataRange;
                 var range2 = data.Max() + 0.1 * dataRange;
 
+                if (dataRange < 0.1)
+                {
+                    range1 -= 1;
+                    range2 += 1;
+                }
+
                 axisOptions.YRange = new[] { Math.Min(range1, range2), Math.Max(range1, range2) };
             }
         }
