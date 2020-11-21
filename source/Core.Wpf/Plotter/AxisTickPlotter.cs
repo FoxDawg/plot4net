@@ -67,7 +67,7 @@ namespace plot4net.Core.Wpf.Plotter
 
                 var tickLabel = new Label
                 {
-                    Content = tick.ToString("f2"),
+                    Content = this.options.XTickLabelFormatter(tick),
                     Width = 40,
                     Height = 25,
                     FontSize = this.options.TickLabelFontSize,
@@ -113,7 +113,7 @@ namespace plot4net.Core.Wpf.Plotter
 
                 var tickLabel = new Label
                 {
-                    Content = tick.ToString("g2"),
+                    Content = this.options.YTickLabelFormatter(tick),
                     Width = 40,
                     Height = 25,
                     FontSize = this.options.TickLabelFontSize,

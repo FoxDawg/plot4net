@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 using plot4net.Core.Enum;
 
@@ -9,6 +10,18 @@ namespace plot4net.Core.Options
     /// </summary>
     public class AxisOptions
     {
+        /// <summary>
+        /// The formatter to use for x axis tick labels.
+        /// By default, fixed point will be used.
+        /// </summary>
+        public Func<double, string> XTickLabelFormatter { get; set; } = d => d.ToString("F1");
+
+        /// <summary>
+        /// The formatter to use for y axis tick labels.
+        /// By default, fixed point will be used.
+        /// </summary>
+        public Func<double, string> YTickLabelFormatter { get; set; } = d => d.ToString("F1");
+
         /// <summary>
         /// The relative margin of the plot to the border on both sides.
         /// </summary>
